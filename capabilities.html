@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Capabilities | Cody J Web Studio</title>
+    <meta name="description" content="Explore the advanced features and capabilities we offer in web development, from interactive elements to technical implementations.">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Fira Code font for code elements -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logogeneric.png" alt="Cody J Web Studio Logo">
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="capabilities.html" class="active">Capabilities</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-overlay">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="capabilities.html" class="active">Capabilities</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="capabilities-hero">
+            <div class="capabilities-hero-content">
+                <h1>Our Capabilities</h1>
+                <p class="subtitle">Discover the advanced features and technical expertise we bring to your website</p>
+            </div>
+        </section>
+
+        <section class="interactive-features">
+            <div class="container">
+                <h2>Interactive Features</h2>
+                <div class="capabilities-grid">
+                    <div class="capability-card chatbot-card">
+                        <h3><span>Custom Chatbots</span><i class="fas fa-robot"></i></h3>
+                        <p>Engage your visitors with intelligent chatbots that can handle common queries and guide users through your website.</p>
+                        <button class="submit-button" type="button" onclick="openChatWidget()">Try It Out</button>
+                    </div>
+                    <div class="capability-card">
+                        <h3><span>Interactive Contact Forms</span><i class="fas fa-envelope"></i></h3>
+                        <p>Custom-built contact forms with automated email responses, form validation, and spam protection to ensure reliable communication with your visitors.</p>
+                        <a href="contact.html#contact-form" class="submit-button">Try It Out</a>
+                    </div>
+                    <!-- More capability cards will be added -->
+                </div>
+            </div>
+        </section>
+
+        <section class="technical-capabilities">
+            <div class="container">
+                <h2>Technical Capabilities</h2>
+                <div class="capabilities-grid">
+                    <div class="capability-card">
+                        <h3><span>Responsive Design</span><i class="fas fa-mobile-alt"></i></h3>
+                        <p>Websites that look and function perfectly across all devices, from mobile phones to desktop computers.</p>
+                        <div class="capability-demo responsive-demo">
+                            <div class="device-mockup-demo">
+                                <div class="device-frame desktop">
+                                    <div class="device-screen">
+                                        <div class="site-header"></div>
+                                        <div class="site-content"></div>
+                                        <div class="site-footer"></div>
+                                    </div>
+                                    <span class="device-label">Desktop</span>
+                                </div>
+                                <div class="device-frame tablet">
+                                    <div class="device-screen">
+                                        <div class="site-header"></div>
+                                        <div class="site-content"></div>
+                                        <div class="site-footer"></div>
+                                    </div>
+                                    <span class="device-label">Tablet</span>
+                                </div>
+                                <div class="device-frame mobile">
+                                    <div class="device-screen">
+                                        <div class="site-header"></div>
+                                        <div class="site-content"></div>
+                                        <div class="site-footer"></div>
+                                    </div>
+                                    <span class="device-label">Mobile</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="capability-card">
+                        <h3><span>Google Maps Integration</span><i class="fas fa-map-marked-alt"></i></h3>
+                        <p>Seamlessly integrate interactive maps into your website, allowing visitors to easily find your location and get directions.</p>
+                        <div class="capability-demo">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78061.52380952767!2d-0.25582947859239613!3d52.308333332771674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877dce058fb0821%3A0x17daf4976ac3318b!2sGodmanchester!5e0!3m2!1sen!2suk!4v1748803254778!5m2!1sen!2suk" 
+                                style="border:0; width: 100%; height: 200px;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="capability-card">
+                        <h3><span>Live Weather Integration</span><i class="fas fa-cloud-sun"></i></h3>
+                        <p>Display real-time weather information for your users by integrating with the OpenWeatherMap API and browser geolocation.</p>
+                        <div class="capability-demo weather-demo">
+                            <div class="weather-status">Loading weather...</div>
+                        </div>
+                    </div>
+                    <!-- More capability cards will be added -->
+                </div>
+            </div>
+        </section>
+
+        <section class="design-elements">
+            <div class="container">
+                <h2>Design Elements</h2>
+                <div class="capabilities-grid">
+                    <div class="capability-card">
+                        <h3><span>Custom Animations</span><i class="fas fa-paint-brush"></i></h3>
+                        <p>Engaging animations and transitions that enhance user experience without compromising performance.</p>
+                        <div class="capability-demo custom-animations-demo">
+                            <!-- Animated Gradient Background -->
+                            <div class="animated-gradient-bg"></div>
+                            <!-- SVG Path Drawing -->
+                            <svg class="svg-path-demo" width="80" height="80" viewBox="0 0 80 80">
+                                <path d="M10 40 Q40 10 70 40 Q40 70 10 40 Z" stroke="#8b5cf6" stroke-width="3" fill="none"/>
+                            </svg>
+                            <!-- Morphing Shape -->
+                            <div class="morphing-shape"></div>
+                            <!-- 3D Card Flip -->
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fas fa-magic"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="capability-card">
+                        <h3><span>Dark/Light Mode</span><i class="fas fa-moon"></i></h3>
+                        <p>Showcase your website's ability to switch between dark and light themes for better accessibility and user preference.</p>
+                        <button class="submit-button" type="button" onclick="toggleCapabilitiesDarkMode()">Try It Out</button>
+                    </div>
+                    <!-- More capability cards will be added -->
+                </div>
+            </div>
+        </section>
+
+        <section class="special-features">
+            <div class="container">
+                <h2>Special Features</h2>
+                <div class="capabilities-grid">
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <h3>Dark/Light Mode</h3>
+                        <p>Implement user preference-based theme switching for enhanced accessibility and user experience.</p>
+                        <div class="capability-demo">
+                            <!-- Demo content will go here -->
+                        </div>
+                    </div>
+                    <!-- More capability cards will be added -->
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Enhance Your Website?</h2>
+                <p>Let's discuss how these capabilities can benefit your business</p>
+                <a href="contact.html" class="cta-button primary">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Cody J Web Studio</h3>
+                <p>Creating digital experiences that matter</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: codyjwebstudio@gmail.com</p>
+                <p>Phone/WhatsApp: +44 7378 776 848</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cody J Web Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/chat.js"></script>
+    <script>
+    // Weather Demo Integration
+    (function() {
+        const apiKey = 'b6dc43f2204198293a1e7719ddff42ae';
+        const weatherStatus = document.querySelector('.weather-status');
+        function showWeather(data) {
+            if (!data || !data.weather || !data.main) {
+                weatherStatus.textContent = 'Weather data unavailable.';
+                return;
+            }
+            const icon = data.weather[0].icon;
+            const temp = Math.round(data.main.temp);
+            const desc = data.weather[0].description;
+            const city = data.name;
+            weatherStatus.innerHTML = `
+                <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc}" style="vertical-align:middle;width:40px;height:40px;"> 
+                <span style="font-size:1.2rem;font-weight:600;">${temp}&deg;C</span> 
+                <span style="text-transform:capitalize;">${desc}</span><br>
+                <span style="font-size:0.95rem;color:#8b5cf6;">${city}</span>
+            `;
+        }
+        function fetchWeatherByCoords(lat, lon) {
+            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`)
+                .then(res => res.json())
+                .then(showWeather)
+                .catch(() => { weatherStatus.textContent = 'Unable to fetch weather.'; });
+        }
+        function fetchWeatherByCity(city) {
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`)
+                .then(res => res.json())
+                .then(showWeather)
+                .catch(() => { weatherStatus.textContent = 'Unable to fetch weather.'; });
+        }
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                pos => fetchWeatherByCoords(pos.coords.latitude, pos.coords.longitude),
+                () => fetchWeatherByCity('London'),
+                { timeout: 8000 }
+            );
+        } else {
+            fetchWeatherByCity('London');
+        }
+    })();
+    </script>
+    <script>
+    function toggleCapabilitiesDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+    </script>
+</body>
+</html> 

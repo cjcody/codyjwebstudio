@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Cody J Web Studio</title>
+    <meta name="description" content="Get in touch with Cody J Web Studio for your web development needs. We're here to help bring your digital vision to life.">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Fira Code font for code elements -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logogeneric.png" alt="Cody J Web Studio Logo">
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="capabilities.html">Capabilities</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-overlay">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="capabilities.html">Capabilities</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="contact-hero-content">
+                <h1>Get In Touch</h1>
+                <p class="subtitle">Let's discuss your project and create something amazing together</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        <div class="info-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email</h3>
+                            <p><a href="mailto:codyjwebstudio@gmail.com">codyjwebstudio@gmail.com</a></p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-phone"></i>
+                            <h3>Phone/WhatsApp</h3>
+                            <p><a href="tel:+447378776848">+44 7378 776 848</a></p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>Response Time</h3>
+                            <p>We typically respond within 24 hours during business days</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-comments"></i>
+                            <h3>Preferred Contact</h3>
+                            <p>Email is the best way to reach us for initial inquiries</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h2>Send Us a Message</h2>
+                        <form id="contact-form" class="contact-form">
+                            <div style="display:none;">
+                                <label for="website">Website</label>
+                                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="Your email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <div class="feature-highlight">
+                    <div class="floating-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="feature-text">
+                        <span class="highlight-text">Easily integrate Google Maps</span>
+                        <span class="sub-highlight">Show your business location with style</span>
+                    </div>
+                </div>
+                <h2>Our Location</h2>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19515.38280952767!2d-0.17582947859239613!3d52.318333332771674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877dce058fb0821%3A0x17daf4976ac3318b!2sGodmanchester!5e0!3m2!1sen!2suk!4v1748799235410!5m2!1sen!2suk&zoom=14" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>What information should I include in my initial message?</h3>
+                        <p>Please include details about your project goals, target audience, and any specific features or functionality you need. The more information you provide, the better we can assist you.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How long does it take to get a response?</h3>
+                        <p>We aim to respond to all inquiries within 24 hours during business days. For urgent matters, please mention this in your message.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do you offer free consultations?</h3>
+                        <p>Yes, we offer a free initial consultation to discuss your project requirements and determine how we can help you achieve your goals.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What happens after I submit the contact form?</h3>
+                        <p>After submitting the form, you'll receive an automated confirmation email. We'll then review your message and get back to you with a detailed response and next steps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Cody J Web Studio</h3>
+                <p>Creating digital experiences that matter</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: codyjwebstudio@gmail.com</p>
+                <p>Phone/WhatsApp: +44 7378 776 848</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cody J Web Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/chat.js"></script>
+</body>
+</html> 
