@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 :root {
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
@@ -56,6 +61,21 @@ body.dark-mode .site-footer {
 }
 
 /* Header and Navigation */
+header, nav, .logo {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.logo {
+    min-width: 0;
+}
+
+.text-logo {
+    min-width: 0;
+    flex-shrink: 1;
+    word-break: break-word;
+}
+
 header {
     background: var(--background);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -74,9 +94,66 @@ nav {
     align-items: center;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .logo img {
     height: 50px;
     width: auto;
+}
+
+.text-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    position: relative;
+}
+
+.text-logo-main {
+    font-size: 1.75rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    animation: gradientFlow 8s infinite;
+}
+
+.text-logo-main::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), #8b5cf6);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: lineReveal 1.5s ease-out forwards;
+}
+
+.text-logo-sub {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--light-text);
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes lineReveal {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
 }
 
 .nav-links {
@@ -1972,4 +2049,38 @@ body.dark-mode .submit-button:hover, body.dark-mode .submit-button:focus {
 }
 body.dark-mode .submit-button:active {
     transform: translateY(-2px);
+}
+
+/* Update mobile styles for the logo */
+@media (max-width: 768px) {
+    .text-logo-main {
+        font-size: 1.5rem;
+    }
+    
+    .text-logo-sub {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-logo-main {
+        font-size: 1.25rem;
+    }
+    
+    .text-logo-sub {
+        font-size: 0.75rem;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+}
+
+a.logo,
+a.logo:visited,
+a.logo:active,
+a.logo:focus {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
 } 
