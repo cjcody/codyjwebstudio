@@ -15,10 +15,18 @@
     --max-width: 1200px;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
 }
 
 body.dark-mode {
@@ -125,31 +133,33 @@ nav {
     filter: blur(60px);
     opacity: 0.5;
     animation: float 15s infinite ease-in-out;
+    max-width: 100vw;
+    max-height: 100vh;
 }
 
 .gradient-sphere:nth-child(1) {
-    width: 600px;
-    height: 600px;
+    width: min(600px, 80vw);
+    height: min(600px, 80vw);
     background: radial-gradient(circle, #3b82f6, transparent 70%);
-    top: -200px;
-    left: -100px;
+    top: -20%;
+    left: -10%;
     animation-delay: 0s;
 }
 
 .gradient-sphere:nth-child(2) {
-    width: 500px;
-    height: 500px;
+    width: min(500px, 70vw);
+    height: min(500px, 70vw);
     background: radial-gradient(circle, #8b5cf6, transparent 70%);
     top: 50%;
-    right: -100px;
+    right: -10%;
     animation-delay: -5s;
 }
 
 .gradient-sphere:nth-child(3) {
-    width: 400px;
-    height: 400px;
+    width: min(400px, 60vw);
+    height: min(400px, 60vw);
     background: radial-gradient(circle, #ec4899, transparent 70%);
-    bottom: -100px;
+    bottom: -10%;
     left: 50%;
     animation-delay: -10s;
 }
@@ -1560,21 +1570,24 @@ html {
 
 .capabilities-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
+    padding: 0 1rem;
 }
 
 .capability-card {
     background: white;
     border-radius: 12px;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    min-width: 0; /* This prevents flex items from overflowing */
 }
 
 .capability-card:hover {
@@ -1669,6 +1682,32 @@ html {
 
     .capability-card h3 {
         font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 0.75rem;
+    }
+
+    .capability-card {
+        padding: 1rem;
+    }
+
+    .capability-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .capability-icon {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .capability-demo {
+        padding: 1rem;
+        min-height: 120px;
     }
 }
 
