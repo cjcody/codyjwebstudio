@@ -1819,6 +1819,24 @@ body.dark-mode .feed-content {
     background: white;
 }
 
+/* Dark mode styles for capabilities sections */
+body.dark-mode .interactive-features,
+body.dark-mode .design-elements {
+    background: #232336;
+}
+
+body.dark-mode .technical-capabilities,
+body.dark-mode .automated-booking {
+    background: #18181b;
+}
+
+body.dark-mode .interactive-features h2,
+body.dark-mode .technical-capabilities h2,
+body.dark-mode .design-elements h2,
+body.dark-mode .automated-booking h2 {
+    color: #f3f4f6;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .capabilities-hero h1 {
