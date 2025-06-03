@@ -291,98 +291,28 @@
 
     <!-- Social Media Tab Switching -->
     <script>
-    // Instagram Basic Display API Integration
-    const INSTAGRAM_APP_ID = 'YOUR_APP_ID'; // You'll need to replace this with your actual app ID
-    const INSTAGRAM_REDIRECT_URI = window.location.origin + '/instagram-callback.html';
-    const INSTAGRAM_SCOPE = 'user_profile,user_media';
-
+    // Social Media Tab Switching
     document.addEventListener('DOMContentLoaded', function() {
         const feedTabs = document.querySelectorAll('.feed-tab');
         const feedContent = document.querySelector('.feed-content');
-        
-        // Instagram API Functions
-        async function getInstagramAuthUrl() {
-            const authUrl = `https://api.instagram.com/oauth/authorize?client_id=${INSTAGRAM_APP_ID}&redirect_uri=${encodeURIComponent(INSTAGRAM_REDIRECT_URI)}&scope=${INSTAGRAM_SCOPE}&response_type=code`;
-            return authUrl;
-        }
 
-        async function handleInstagramAuth() {
-            try {
-                const authUrl = await getInstagramAuthUrl();
-                // Store the current state to return to after auth
-                sessionStorage.setItem('instagram_auth_state', 'pending');
-                // Open Instagram auth in a popup
-                const popup = window.open(authUrl, 'Instagram Auth', 'width=600,height=600');
-                
-                // Listen for the auth response
-                window.addEventListener('message', async function(event) {
-                    if (event.origin === window.location.origin && event.data.type === 'instagram_auth') {
-                        popup.close();
-                        if (event.data.code) {
-                            await fetchInstagramFeed(event.data.code);
-                        }
-                    }
-                });
-            } catch (error) {
-                console.error('Instagram auth error:', error);
-                showInstagramError();
-            }
-        }
-
-        async function fetchInstagramFeed(code) {
-            try {
-                // In a real implementation, you would exchange this code for an access token
-                // using a backend server. For demo purposes, we'll show a message about this.
-                feedContent.innerHTML = `
-                    <div class="instagram-preview">
-                        <i class="fab fa-instagram" style="font-size: 2rem; color: #E1306C; margin-bottom: 1rem;"></i>
-                        <p>Instagram integration requires a backend server for secure token exchange.</p>
-                        <div class="feed-placeholder" style="background: #f3f4f6; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-                            <p style="color: var(--light-text); font-size: 0.9rem;">
-                                For security reasons, Instagram API requires server-side token exchange.
-                                This demo shows the authentication flow, but actual feed display
-                                would require a backend server to handle the OAuth token exchange.
-                            </p>
-                            <div style="margin-top: 1rem; padding: 1rem; background: white; border-radius: 4px;">
-                                <h4 style="margin-bottom: 0.5rem;">What's happening:</h4>
-                                <ol style="margin: 0; padding-left: 1.5rem; font-size: 0.9rem;">
-                                    <li>User authenticates with Instagram</li>
-                                    <li>Instagram returns an authorization code</li>
-                                    <li>Code must be exchanged for an access token (requires backend)</li>
-                                    <li>Access token is used to fetch the feed</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            } catch (error) {
-                console.error('Error fetching Instagram feed:', error);
-                showInstagramError();
-            }
-        }
-
-        function showInstagramError() {
+        // Instagram tab placeholder
+        function handleInstagramAuth() {
             feedContent.innerHTML = `
                 <div class="instagram-preview">
                     <i class="fab fa-instagram" style="font-size: 2rem; color: #E1306C; margin-bottom: 1rem;"></i>
-                    <p style="color: #ef4444;">Unable to load Instagram feed</p>
+                    <p>Instagram integration coming soon</p>
                     <div class="feed-placeholder" style="background: #f3f4f6; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
                         <p style="color: var(--light-text); font-size: 0.9rem;">
-                            Please ensure you have:
+                            Instagram feed integration will be implemented in a future update.
                         </p>
-                        <ul style="margin: 0.5rem 0; padding-left: 1.5rem; font-size: 0.9rem;">
-                            <li>Created a Facebook Developer account</li>
-                            <li>Set up an Instagram Basic Display app</li>
-                            <li>Added your domain to the app's allowed domains</li>
-                            <li>Configured the correct redirect URI</li>
-                        </ul>
                     </div>
                 </div>
             `;
         }
 
-        // Facebook API Functions (Placeholder for now)
-        async function handleFacebookAuth() {
+        // Facebook tab placeholder
+        function handleFacebookAuth() {
             feedContent.innerHTML = `
                 <div class="facebook-preview">
                     <i class="fab fa-facebook" style="font-size: 2rem; color: #1877F2; margin-bottom: 1rem;"></i>
@@ -401,10 +331,8 @@
         function switchTab(tab) {
             // Remove active class from all tabs
             feedTabs.forEach(t => t.classList.remove('active'));
-            
             // Add active class to clicked tab
             tab.classList.add('active');
-            
             // Handle platform-specific actions
             const platform = tab.getAttribute('data-feed');
             if (platform === 'instagram') {
@@ -425,7 +353,7 @@
     </script>
 
     <!-- Scheduling Modal -->
-    <div id="scheduling-modal" class="scheduling-modal" style="display:none;">
+    <div id="scheduling-modal" class="scheduling-modal" style="display:none;" tabindex="-1" aria-hidden="true" aria-labelledby="scheduling-modal-title" aria-modal="true" role="dialog" data-modal="true" data-modal-id="book-consultation">
         <div class="scheduling-modal-backdrop"></div>
         <div class="scheduling-modal-content" role="dialog" aria-modal="true" aria-labelledby="scheduling-modal-title">
             <button class="scheduling-modal-close" id="close-scheduling-modal" aria-label="Close">&times;</button>
@@ -498,6 +426,13 @@
             closeModal();
         }
     });
+
+    // Auto-open modal if URL hash is #book-consultation
+    if (window.location.hash === '#book-consultation') {
+        window.addEventListener('DOMContentLoaded', function() {
+            openModal();
+        });
+    }
 
     // Update the form submission to include time validation
     const schedulingForm = document.getElementById('scheduling-form');
