@@ -72,19 +72,19 @@
                         </div>
                         <div class="info-card">
                             <i class="fas fa-clock"></i>
-                            <h3>Response Time</h3>
-                            <p>We typically respond within 24 hours during business days</p>
+                            <h3>placeholder</h3>
+                            <p>placeholder</p>
                         </div>
                         <div class="info-card">
                             <i class="fas fa-comments"></i>
                             <h3>Preferred Contact</h3>
-                            <p>Email is the best way to reach us for initial inquiries</p>
+                            <p>Email is the best way to reach us for initial inquiries - we typically respond within 24 hours</p>
                         </div>
                     </div>
                     
                     <div class="contact-form-container">
                         <h2>Send Us a Message</h2>
-                        <form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbwXvdEIHOFX-H9sLVbeLOoxNxaVWfRJL1M5xT3zRI1Lc5DPBaFnGC3A2Nr9U96bTRW4cg/exec" method="POST">
+                        <form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbx62hr3mUln_kGR09glSpbvrhQF1h5VWC13h7z1Hm9zjkIsh20G7AG6wQv-auKMCo4fAw/exec" method="POST">
                             <div style="display:none;">
                                 <label for="website">Website</label>
                                 <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -96,6 +96,10 @@
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email" required placeholder="Your email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="0123456789">
                             </div>
                             <div class="form-group">
                                 <label for="subject">Subject</label>
@@ -189,6 +193,10 @@
         </div>
     </footer>
 
+    <button class="floating-book-btn" aria-label="Schedule Today">
+        <i class="fas fa-calendar-alt"></i> Schedule Today
+    </button>
+
     <script src="scripts/main.js"></script>
     <script src="scripts/chat.js"></script>
     <script>
@@ -217,15 +225,25 @@
             }
         });
         
-        // Send to Apps Script
-        fetch(form.action, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
+        // Send to both Apps Scripts in parallel and wait for both to finish
+        Promise.all([
+            fetch(form.action, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            }),
+            fetch('https://script.google.com/macros/s/AKfycbyeHeLC529z212QCmuiHe_gJpgF32d310rjQyuhlyUHvW0dJ05VbvtDc_XcdHOVAd9q/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+        ])
         .then(() => {
             // Show success message
             formStatus.style.display = 'block';

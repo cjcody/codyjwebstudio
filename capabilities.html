@@ -189,19 +189,14 @@
             </div>
         </section>
 
-        <section class="special-features">
+        <section class="automated-booking">
             <div class="container">
-                <h2>Special Features</h2>
+                <h2>Automated Booking, No Hassle</h2>
                 <div class="capabilities-grid">
                     <div class="capability-card">
-                        <div class="capability-icon">
-                            <i class="fas fa-moon"></i>
-                        </div>
-                        <h3>Dark/Light Mode</h3>
-                        <p>Implement user preference-based theme switching for enhanced accessibility and user experience.</p>
-                        <div class="capability-demo">
-                            <!-- Demo content will go here -->
-                        </div>
+                        <h3>Scheduling <i class="fas fa-calendar-alt"></i></h3>
+                        <p>Tired of back-and-forth emails? Include a custom scheduling system in your website — powered by Google Calendar. For demonstration only. Our consultations can be booked by email as well as through our contact form.</p>
+                        <button class="submit-button" type="button" id="open-scheduling-modal">Try it Out</button>
                     </div>
                     <!-- More capability cards will be added -->
                 </div>
@@ -426,6 +421,120 @@
 
         // Initialize with Instagram tab
         switchTab(feedTabs[0]);
+    });
+    </script>
+
+    <!-- Scheduling Modal -->
+    <div id="scheduling-modal" class="scheduling-modal" style="display:none;">
+        <div class="scheduling-modal-backdrop"></div>
+        <div class="scheduling-modal-content" role="dialog" aria-modal="true" aria-labelledby="scheduling-modal-title">
+            <button class="scheduling-modal-close" id="close-scheduling-modal" aria-label="Close">&times;</button>
+            <h2 id="scheduling-modal-title">Book a Consultation</h2>
+            <!-- Scheduling form will go here -->
+            <form id="scheduling-form">
+                <div class="form-group">
+                    <label for="sched-name">Name</label>
+                    <input type="text" id="sched-name" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="sched-email">Email</label>
+                    <input type="email" id="sched-email" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="sched-service">Service</label>
+                    <select id="sched-service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="Consultation">Consultation</option>
+                        <option value="Website Audit">Website Audit</option>
+                        <option value="Project Discussion">Project Discussion</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sched-date">Date</label>
+                    <input type="date" id="sched-date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="sched-time">Time</label>
+                    <select id="sched-time" name="time" required>
+                        <option value="">Select a time slot</option>
+                        <option value="08:00">08:00 - 09:00</option>
+                        <option value="09:00">09:00 - 10:00</option>
+                        <option value="10:00">10:00 - 11:00</option>
+                        <option value="11:00">11:00 - 12:00</option>
+                        <option value="12:00">12:00 - 13:00</option>
+                        <option value="13:00">13:00 - 14:00</option>
+                        <option value="14:00">14:00 - 15:00</option>
+                        <option value="15:00">15:00 - 16:00</option>
+                        <option value="16:00">16:00 - 17:00</option>
+                    </select>
+                    <small style="display: block; margin-top: 0.25rem; color: var(--light-text);">Available time slots: 08:00 - 17:00 (1-hour appointments)</small>
+                </div>
+                <button type="submit" class="submit-button">Book Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    // Scheduling Modal Interactivity
+    const openModalBtn = document.getElementById('open-scheduling-modal');
+    const modal = document.getElementById('scheduling-modal');
+    const closeModalBtn = document.getElementById('close-scheduling-modal');
+    const modalBackdrop = document.querySelector('.scheduling-modal-backdrop');
+
+    function openModal() {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+    }
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    openModalBtn.addEventListener('click', openModal);
+    closeModalBtn.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+    // Optional: Close modal on Escape key
+    window.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            closeModal();
+        }
+    });
+
+    // Update the form submission to include time validation
+    const schedulingForm = document.getElementById('scheduling-form');
+    schedulingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(schedulingForm);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+        
+        // Send to Google Apps Script for calendar booking
+        fetch('https://script.google.com/macros/s/AKfycbx_GFLhiPaRZ9UBZI45dTx6KHHUlV7BfWCCIU2u6AESRAPM5p4FIFr3zpMndThZBetvYQ/exec', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        .then(() => {
+            // Since we're using no-cors, we can't read the response
+            // But we can assume success if the request completes
+            alert('Booking confirmed! A calendar invitation has been sent to your email.');
+            // Handle success (e.g., close modal, reset form)
+            if (typeof closeModal === 'function') {
+                closeModal();
+            }
+            if (typeof schedulingForm !== 'undefined') {
+                schedulingForm.reset();
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error: Failed to book appointment. Please try again or contact us directly.');
+        });
     });
     </script>
 </body>
