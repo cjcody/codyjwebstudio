@@ -2228,37 +2228,43 @@ a.logo:focus {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 3000;
+    overflow: hidden;
 }
+
 .scheduling-modal-backdrop {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background: rgba(31, 41, 55, 0.65);
     z-index: 1;
 }
+
 .scheduling-modal-content {
     position: relative;
     z-index: 2;
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(37, 99, 235, 0.18);
-    padding: 2.5rem 2rem 2rem 2rem;
+    padding: 2rem;
+    width: 90%;
     max-width: 420px;
-    width: 90vw;
     max-height: 90vh;
     overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    margin: 1rem;
 }
+
 .scheduling-modal-content h2 {
     margin-top: 0;
     margin-bottom: 1.5rem;
@@ -2266,6 +2272,7 @@ a.logo:focus {
     color: var(--primary-color);
     text-align: center;
 }
+
 .scheduling-modal-close {
     position: absolute;
     top: 1rem;
@@ -2278,20 +2285,24 @@ a.logo:focus {
     transition: color 0.2s;
     z-index: 3;
 }
+
 .scheduling-modal-close:hover,
 .scheduling-modal-close:focus {
     color: #2563eb;
     outline: none;
 }
+
 #scheduling-form .form-group {
     margin-bottom: 1.25rem;
 }
+
 #scheduling-form label {
     display: block;
     margin-bottom: 0.4rem;
     font-weight: 500;
     color: var(--text-color);
 }
+
 #scheduling-form input,
 #scheduling-form select {
     width: 100%;
@@ -2301,23 +2312,85 @@ a.logo:focus {
     font-size: 1rem;
     font-family: inherit;
     transition: border-color 0.3s;
+    background-color: white;
+    color: var(--text-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
+
 #scheduling-form input:focus,
 #scheduling-form select:focus {
     outline: none;
     border-color: var(--primary-color);
 }
+
 #scheduling-form .submit-button {
     margin-top: 1rem;
 }
+
+/* Specific styling for date input */
+#scheduling-form input[type="date"] {
+    position: relative;
+    cursor: pointer;
+}
+
+#scheduling-form input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: var(--primary-color);
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    filter: invert(1);
+}
+
+#scheduling-form input[type="date"]::-webkit-datetime-edit {
+    padding: 0;
+}
+
+/* Specific styling for select (time) input */
+#scheduling-form select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+}
+
+/* Dark mode styles */
+body.dark-mode #scheduling-form input,
+body.dark-mode #scheduling-form select {
+    background-color: #232336;
+    border-color: #44445a;
+    color: #f3f4f6;
+}
+
+body.dark-mode #scheduling-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.8);
+}
+
+body.dark-mode #scheduling-form select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
 @media (max-width: 600px) {
     .scheduling-modal-content {
-        padding: 1.25rem 0.5rem 1.5rem 0.5rem;
-        max-width: 98vw;
+        width: 95%;
+        padding: 1.5rem 1rem;
+        margin: 0.5rem;
     }
+    
     .scheduling-modal-close {
         top: 0.5rem;
         right: 0.5rem;
         font-size: 1.5rem;
+    }
+
+    #scheduling-form .form-group {
+        margin-bottom: 1rem;
+    }
+
+    #scheduling-form input,
+    #scheduling-form select {
+        padding: 0.6rem;
     }
 } 
