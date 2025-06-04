@@ -89,14 +89,44 @@ class ChatWidget {
     }
 
     addBotResponse(userMessage) {
-        // Simple response logic - can be expanded later
+        // Enhanced response system with keyword arrays
         const responses = {
-            'hello': 'Hello! How can I help you today?',
-            'hi': 'Hi there! What can I do for you?',
-            'help': 'I can help you with information about our web development services, pricing, or scheduling a consultation. What would you like to know?',
-            'price': 'Our pricing varies based on project requirements. Would you like to schedule a free consultation to discuss your needs?',
-            'contact': 'You can reach us at codyjwebstudio@gmail.com or call us at +44 7378 776 848.',
-            'service': 'We offer web design, mobile-first development, SEO optimization, monthly maintenance plans, and brand identity design. Which service interests you?'
+            greeting: {
+                keywords: ['hello', 'hi', 'hey', 'greetings', 'good morning', 'good afternoon', 'good evening'],
+                response: 'Hello! How can I help you today?'
+            },
+            help: {
+                keywords: ['help', 'assist', 'support', 'what can you do', 'how can you help', 'what do you do'],
+                response: 'I can help you with information about our web development services, pricing, or scheduling a consultation. What would you like to know?'
+            },
+            pricing: {
+                keywords: ['price', 'pricing', 'cost', 'how much', 'fee', 'rates', 'budget', 'expensive', 'cheap', 'affordable'],
+                response: 'Our pricing varies based on project requirements. Would you like to schedule a free consultation to discuss your needs?'
+            },
+            contact: {
+                keywords: ['contact', 'email', 'phone', 'call', 'reach', 'get in touch', 'message', 'text', 'whatsapp'],
+                response: 'You can reach us at codyjwebstudio@gmail.com or call us at +44 7378 776 848.'
+            },
+            services: {
+                keywords: ['service', 'services', 'what do you offer', 'offer', 'website', 'web design', 'development', 'seo', 'maintenance', 'brand', 'identity'],
+                response: 'We offer web design, mobile-first development, SEO optimization, monthly maintenance plans, and brand identity design. Which service interests you?'
+            },
+            booking: {
+                keywords: ['book', 'booking', 'schedule', 'appointment', 'consultation', 'meeting', 'calendar', 'availability', 'when', 'time'],
+                response: 'You can schedule a consultation through our booking system. Would you like me to open the booking form for you?'
+            },
+            portfolio: {
+                keywords: ['portfolio', 'work', 'projects', 'examples', 'show me', 'see', 'previous', 'past', 'samples'],
+                response: 'You can view our portfolio of work on our website. Would you like me to show you some examples of our recent projects?'
+            },
+            location: {
+                keywords: ['where', 'location', 'based', 'area', 'region', 'country', 'city', 'remote', 'online'],
+                response: 'We work remotely with clients worldwide, but our main office is in the UK. We can work with you regardless of your location!'
+            },
+            timeline: {
+                keywords: ['how long', 'timeline', 'duration', 'time', 'quick', 'fast', 'when', 'deadline', 'schedule'],
+                response: 'Project timelines vary based on scope and complexity. During our consultation, we can provide a detailed timeline for your specific project.'
+            }
         };
 
         // Convert user message to lowercase for matching
@@ -104,9 +134,9 @@ class ChatWidget {
         let response = "I'm not sure I understand. Could you please rephrase that? I can help with information about our services, pricing, or how to contact us.";
 
         // Check for keywords in the message
-        for (let key in responses) {
-            if (lowerMessage.includes(key)) {
-                response = responses[key];
+        for (let category in responses) {
+            if (responses[category].keywords.some(keyword => lowerMessage.includes(keyword))) {
+                response = responses[category].response;
                 break;
             }
         }

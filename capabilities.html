@@ -26,7 +26,7 @@
             </button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#services">Services</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="capabilities.html" class="active">Capabilities</a></li>
                 <li><a href="index.html#portfolio">Portfolio</a></li>
                 <li><a href="about.html">About</a></li>
@@ -37,7 +37,7 @@
             <nav class="mobile-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="capabilities.html" class="active">Capabilities</a></li>
                     <li><a href="index.html#portfolio">Portfolio</a></li>
                     <li><a href="about.html">About</a></li>
@@ -128,21 +128,6 @@
                         <p>Display real-time weather information for your users by integrating with the OpenWeatherMap API and browser geolocation.</p>
                         <div class="capability-demo weather-demo">
                             <div class="weather-status">Loading weather...</div>
-                        </div>
-                    </div>
-                    <div class="capability-card">
-                        <h3><span>Social Media Integration</span><i class="fas fa-share-alt"></i></h3>
-                        <p>Seamlessly integrate live social media feeds from Instagram and Facebook to showcase your latest content and engage with your audience.</p>
-                        <div class="capability-demo social-media-demo">
-                            <div class="social-feed-preview">
-                                <div class="feed-tabs">
-                                    <button class="feed-tab active" data-feed="instagram">Instagram</button>
-                                    <button class="feed-tab" data-feed="facebook">Facebook</button>
-                                </div>
-                                <div class="feed-content">
-                                    <p>Live social media feeds will appear here</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <!-- More capability cards will be added -->
@@ -295,7 +280,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         const feedTabs = document.querySelectorAll('.feed-tab');
         const feedContent = document.querySelector('.feed-content');
-
+        
         // Instagram tab placeholder
         function handleInstagramAuth() {
             feedContent.innerHTML = `
@@ -353,11 +338,17 @@
     </script>
 
     <!-- Scheduling Modal -->
-    <div id="scheduling-modal" class="scheduling-modal" style="display:none;" tabindex="-1" aria-hidden="true" aria-labelledby="scheduling-modal-title" aria-modal="true" role="dialog" data-modal="true" data-modal-id="book-consultation">
+    <div id="scheduling-modal" class="scheduling-modal" style="display:none;" 
+        role="dialog" 
+        aria-modal="true" 
+        aria-labelledby="scheduling-modal-title"
+        data-modal="true" 
+        data-modal-id="book-consultation">
         <div class="scheduling-modal-backdrop"></div>
-        <div class="scheduling-modal-content" role="dialog" aria-modal="true" aria-labelledby="scheduling-modal-title">
+        <div class="scheduling-modal-content">
             <button class="scheduling-modal-close" id="close-scheduling-modal" aria-label="Close">&times;</button>
             <h2 id="scheduling-modal-title">Book a Consultation</h2>
+            <p class="scheduling-modal-note">Demo only, please email or use the contact form to get in touch</p>
             <!-- Scheduling form will go here -->
             <form id="scheduling-form">
                 <div class="form-group">
@@ -379,21 +370,13 @@
                 </div>
                 <div class="form-group">
                     <label for="sched-date">Date</label>
-                    <input type="date" id="sched-date" name="date" required>
+                    <input type="date" id="sched-date" name="date" required min="<?php echo date('Y-m-d'); ?>">
+                    <small style="display: block; margin-top: 0.25rem; color: var(--light-text);">Select a date to see available time slots</small>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="time-slot-group" style="display: none;">
                     <label for="sched-time">Time</label>
-                    <select id="sched-time" name="time" required>
-                        <option value="">Select a time slot</option>
-                        <option value="08:00">08:00 - 09:00</option>
-                        <option value="09:00">09:00 - 10:00</option>
-                        <option value="10:00">10:00 - 11:00</option>
-                        <option value="11:00">11:00 - 12:00</option>
-                        <option value="12:00">12:00 - 13:00</option>
-                        <option value="13:00">13:00 - 14:00</option>
-                        <option value="14:00">14:00 - 15:00</option>
-                        <option value="15:00">15:00 - 16:00</option>
-                        <option value="16:00">16:00 - 17:00</option>
+                    <select id="sched-time" name="time" required disabled>
+                        <option value="">Loading available time slots...</option>
                     </select>
                     <small style="display: block; margin-top: 0.25rem; color: var(--light-text);">Available time slots: 08:00 - 17:00 (1-hour appointments)</small>
                 </div>
@@ -408,14 +391,28 @@
     const modal = document.getElementById('scheduling-modal');
     const closeModalBtn = document.getElementById('close-scheduling-modal');
     const modalBackdrop = document.querySelector('.scheduling-modal-backdrop');
+    const schedulingForm = document.getElementById('scheduling-form'); // Moved to top with other declarations
 
     function openModal() {
         modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Prevent background scroll
+        document.body.style.overflow = 'hidden';
+        // Remove aria-hidden when modal is open
+        modal.removeAttribute('aria-hidden');
+        // Focus the first focusable element
+        const firstFocusable = modal.querySelector('input, button, select');
+        if (firstFocusable) {
+            firstFocusable.focus();
+        }
     }
     function closeModal() {
         modal.style.display = 'none';
         document.body.style.overflow = '';
+        // Add aria-hidden when modal is closed
+        modal.setAttribute('aria-hidden', 'true');
+        // Return focus to the button that opened the modal
+        if (openModalBtn) {
+            openModalBtn.focus();
+        }
     }
     openModalBtn.addEventListener('click', openModal);
     closeModalBtn.addEventListener('click', closeModal);
@@ -434,10 +431,109 @@
         });
     }
 
-    // Update the form submission to include time validation
-    const schedulingForm = document.getElementById('scheduling-form');
-    schedulingForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+    // Function to check availability using JSONP
+    function checkTimeSlotAvailability(date, time) {
+        return new Promise((resolve, reject) => {
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbwJ5xw950Ico8EI-QxM8ry_wCFIX5k_S8H_6BRjWcslfaJy-FKGfpwj0F7zcg7xtFNL/exec';
+            const callbackName = 'jsonpCallback_' + Math.round(Math.random() * 1000000);
+            
+            // Create a global callback function
+            window[callbackName] = function(response) {
+                delete window[callbackName];
+                document.body.removeChild(script);
+                
+                if (response.status === 'error') {
+                    console.error('Server returned error:', response.message);
+                    resolve(false);
+                } else {
+                    resolve(response.available === true);
+                }
+            };
+            
+            // Create and append script tag
+            const script = document.createElement('script');
+            script.src = `${scriptUrl}?action=checkAvailability&date=${date}&time=${time}&callback=${callbackName}`;
+            script.onerror = () => {
+                delete window[callbackName];
+                document.body.removeChild(script);
+                reject(new Error('Failed to load script'));
+            };
+            document.body.appendChild(script);
+        });
+    }
+
+    // Add this after your existing scheduling form code
+    document.addEventListener('DOMContentLoaded', function() {
+        const dateInput = document.getElementById('sched-date');
+        const timeSelect = document.getElementById('sched-time');
+        const timeSlotGroup = document.getElementById('time-slot-group');
+        const submitButton = document.querySelector('.submit-button');
+        
+        // Set minimum date to today
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        dateInput.min = `${yyyy}-${mm}-${dd}`;
+        
+        // Function to check all time slots for a given date
+        async function checkAvailableTimeSlots(date) {
+            const timeSlots = [
+                '08:00', '09:00', '10:00', '11:00', '12:00',
+                '13:00', '14:00', '15:00', '16:00'
+            ];
+            
+            // Show loading state
+            timeSlotGroup.style.display = 'block';
+            timeSelect.disabled = true;
+            timeSelect.innerHTML = '<option value="">Checking availability...</option>';
+            
+            try {
+                // Check all time slots in parallel
+                const availabilityChecks = await Promise.all(
+                    timeSlots.map(time => checkTimeSlotAvailability(date, time))
+                );
+                
+                // Filter available time slots
+                const availableSlots = timeSlots.filter((_, index) => availabilityChecks[index]);
+                
+                // Update time select options
+                if (availableSlots.length > 0) {
+                    timeSelect.innerHTML = `
+                        <option value="">Select a time slot</option>
+                        ${availableSlots.map(time => `
+                            <option value="${time}">${time} - ${String(parseInt(time) + 1).padStart(2, '0')}:00</option>
+                        `).join('')}
+                    `;
+                    timeSelect.disabled = false;
+                } else {
+                    timeSelect.innerHTML = '<option value="">No available time slots for this date</option>';
+                    timeSelect.disabled = true;
+                }
+            } catch (error) {
+                console.error('Error checking time slots:', error);
+                timeSelect.innerHTML = '<option value="">Error loading time slots. Please try again.</option>';
+                timeSelect.disabled = true;
+            }
+        }
+        
+        // Handle date selection
+        dateInput.addEventListener('change', async function(e) {
+            const selectedDate = e.target.value;
+            if (selectedDate) {
+                submitButton.disabled = true;
+                await checkAvailableTimeSlots(selectedDate);
+                submitButton.disabled = false;
+            } else {
+                timeSlotGroup.style.display = 'none';
+                timeSelect.disabled = true;
+            }
+        });
+        
+        // Update form submission to not check availability again
+        if (schedulingForm) {
+            schedulingForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
         
         const formData = new FormData(schedulingForm);
         const data = {};
@@ -445,31 +541,50 @@
             data[key] = value;
         });
         
-        // Send to Google Apps Script for calendar booking
-        fetch('https://script.google.com/macros/s/AKfycbx_GFLhiPaRZ9UBZI45dTx6KHHUlV7BfWCCIU2u6AESRAPM5p4FIFr3zpMndThZBetvYQ/exec', {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-        .then(() => {
-            // Since we're using no-cors, we can't read the response
-            // But we can assume success if the request completes
+                const submitButton = schedulingForm.querySelector('.submit-button');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Booking...';
+                
+                try {
+                    // Submit the form using JSONP
+                    await new Promise((resolve, reject) => {
+                        const scriptUrl = 'https://script.google.com/macros/s/AKfycbwJ5xw950Ico8EI-QxM8ry_wCFIX5k_S8H_6BRjWcslfaJy-FKGfpwj0F7zcg7xtFNL/exec';
+                        const callbackName = 'jsonpCallback_' + Math.round(Math.random() * 1000000);
+                        
+                        window[callbackName] = function(response) {
+                            delete window[callbackName];
+                            document.body.removeChild(script);
+                            
+                            if (response.status === 'error') {
+                                reject(new Error(response.message));
+                            } else {
+                                resolve(response);
+                            }
+                        };
+                        
+                        const script = document.createElement('script');
+                        script.src = `${scriptUrl}?action=book&data=${encodeURIComponent(JSON.stringify(data))}&callback=${callbackName}`;
+                        script.onerror = () => {
+                            delete window[callbackName];
+                            document.body.removeChild(script);
+                            reject(new Error('Failed to submit booking'));
+                        };
+                        document.body.appendChild(script);
+                    });
+
             alert('Booking confirmed! A calendar invitation has been sent to your email.');
-            // Handle success (e.g., close modal, reset form)
-            if (typeof closeModal === 'function') {
                 closeModal();
-            }
-            if (typeof schedulingForm !== 'undefined') {
                 schedulingForm.reset();
-            }
-        })
-        .catch(error => {
+                    timeSlotGroup.style.display = 'none';
+                } catch (error) {
             console.error('Error:', error);
             alert('Error: Failed to book appointment. Please try again or contact us directly.');
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Book Now';
+                }
         });
+        }
     });
     </script>
 </body>
