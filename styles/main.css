@@ -2594,7 +2594,7 @@ body.dark-mode #scheduling-form select {
 
 /* Service Packages Section Fix */
 .service-packages {
-    padding: 4rem 2rem;
+    padding: 4rem 0rem;
     background: var(--light-background);
 }
 
@@ -3220,6 +3220,30 @@ body.dark-mode #scheduling-form select {
         font-size: 2.5rem;
     }
     .portfolio-hero .subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+/* Add responsive media queries for contact hero */
+@media (max-width: 1024px) {
+    .contact-hero .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .contact-hero h1 {
+        font-size: 3rem;
+    }
+    .contact-hero .subtitle {
+        margin: 0 auto 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero h1 {
+        font-size: 2.5rem;
+    }
+    .contact-hero .subtitle {
         font-size: 1.1rem;
     }
 }
