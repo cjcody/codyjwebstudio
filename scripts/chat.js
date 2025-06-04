@@ -93,7 +93,7 @@ class ChatWidget {
         const responses = {
             greeting: {
                 keywords: ['hello', 'hi', 'hey', 'greetings', 'good morning', 'good afternoon', 'good evening'],
-                response: 'Hello! How can I help you today?'
+                response: 'Hello! How can I help you today? Say something like help or pricing.'
             },
             help: {
                 keywords: ['help', 'assist', 'support', 'what can you do', 'how can you help', 'what do you do'],
@@ -101,23 +101,23 @@ class ChatWidget {
             },
             pricing: {
                 keywords: ['price', 'pricing', 'cost', 'how much', 'fee', 'rates', 'budget', 'expensive', 'cheap', 'affordable'],
-                response: 'Our pricing varies based on project requirements. Would you like to schedule a free consultation to discuss your needs?'
+                response: 'Our new project pricing starts at $300 and our monthly maintenace plans start at $50/month. Visit our contact page if you like to schedule a free consultation to discuss your needs.'
             },
             contact: {
                 keywords: ['contact', 'email', 'phone', 'call', 'reach', 'get in touch', 'message', 'text', 'whatsapp'],
-                response: 'You can reach us at codyjwebstudio@gmail.com or call us at +44 7378 776 848.'
+                response: 'You can reach us at codyjwebstudio@gmail.com or make use of our contact form.'
             },
             services: {
                 keywords: ['service', 'services', 'what do you offer', 'offer', 'website', 'web design', 'development', 'seo', 'maintenance', 'brand', 'identity'],
-                response: 'We offer web design, mobile-first development, SEO optimization, monthly maintenance plans, and brand identity design. Which service interests you?'
+                response: 'We offer web design, mobile-first development, SEO optimization, monthly maintenance plans, and brand identity design. Visit our services page for more information.'
             },
             booking: {
                 keywords: ['book', 'booking', 'schedule', 'appointment', 'consultation', 'meeting', 'calendar', 'availability', 'when', 'time'],
-                response: 'You can schedule a consultation through our booking system. Would you like me to open the booking form for you?'
+                response: 'Our booking system is a showcase only feature. Please email or use the contact form to connect with us.'
             },
             portfolio: {
                 keywords: ['portfolio', 'work', 'projects', 'examples', 'show me', 'see', 'previous', 'past', 'samples'],
-                response: 'You can view our portfolio of work on our website. Would you like me to show you some examples of our recent projects?'
+                response: 'You can view our portfolio of work on our website.'
             },
             location: {
                 keywords: ['where', 'location', 'based', 'area', 'region', 'country', 'city', 'remote', 'online'],

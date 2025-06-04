@@ -593,15 +593,40 @@ nav {
 
 /* Contact Page Styles */
 .contact-hero {
+    position: relative;
+    min-height: 100vh;
     padding: 8rem 2rem 4rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
-    text-align: center;
 }
 
-.contact-hero-content {
+.contact-hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.contact-hero .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: var(--max-width);
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.contact-hero .hero-text {
+    text-align: left;
 }
 
 .contact-hero h1 {
@@ -868,15 +893,40 @@ html {
 
 /* About Page Styles */
 .about-hero {
+    position: relative;
+    min-height: 100vh;
     padding: 8rem 2rem 4rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
-    text-align: center;
 }
 
-.about-hero-content {
+.about-hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.about-hero .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: var(--max-width);
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-hero .hero-text {
+    text-align: left;
 }
 
 .about-hero h1 {
@@ -891,6 +941,30 @@ html {
 .about-hero .subtitle {
     font-size: 1.25rem;
     color: #94a3b8;
+}
+
+/* Insert media queries for the about hero so that on smaller screens (e.g. below 1024px) the hero content switches to a single column (grid‑template‑columns: 1fr) and the text is centered (and the font sizes (h1, subtitle) are reduced (e.g. h1: 3rem (or 2.5rem) and subtitle: 1.1rem) on mobile). */
+@media (max-width: 1024px) {
+    .about-hero .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .about-hero h1 {
+        font-size: 3rem;
+    }
+    .about-hero .subtitle {
+        margin: 0 auto 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+    .about-hero .subtitle {
+        font-size: 1.1rem;
+    }
 }
 
 .container {
@@ -1615,15 +1689,40 @@ html {
 
 /* Capabilities Page Styles */
 .capabilities-hero {
+    position: relative;
+    min-height: 100vh;
     padding: 8rem 2rem 4rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
-    text-align: center;
 }
 
-.capabilities-hero-content {
+.capabilities-hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.capabilities-hero .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: var(--max-width);
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.capabilities-hero .hero-text {
+    text-align: left;
 }
 
 .capabilities-hero h1 {
@@ -1638,6 +1737,30 @@ html {
 .capabilities-hero .subtitle {
     font-size: 1.25rem;
     color: #94a3b8;
+}
+
+/* Insert media queries for the capabilities hero so that on smaller screens (e.g. below 1024px) the hero content switches to a single column (grid‑template‑columns: 1fr) and the text is centered (and the font sizes (h1, subtitle) are reduced (e.g. h1: 3rem (or 2.5rem) and subtitle: 1.1rem) on mobile). */
+@media (max-width: 1024px) {
+    .capabilities-hero .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .capabilities-hero h1 {
+        font-size: 3rem;
+    }
+    .capabilities-hero .subtitle {
+        margin: 0 auto 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .capabilities-hero h1 {
+        font-size: 2.5rem;
+    }
+    .capabilities-hero .subtitle {
+        font-size: 1.1rem;
+    }
 }
 
 .capabilities-grid {
@@ -2419,15 +2542,40 @@ body.dark-mode #scheduling-form select {
 
 /* Services Page Styles */
 .services-hero {
+    position: relative;
+    min-height: 100vh;
     padding: 8rem 2rem 4rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
-    text-align: center;
 }
 
-.services-hero-content {
+.services-hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.services-hero .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: var(--max-width);
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.services-hero .hero-text {
+    text-align: left;
 }
 
 .services-hero h1 {
@@ -2444,69 +2592,29 @@ body.dark-mode #scheduling-form select {
     color: #94a3b8;
 }
 
-@media (max-width: 1024px) {
-    .services-hero h1 {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .services-hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .services-hero .subtitle {
-        font-size: 1.1rem;
-    }
-}
-
-.pricing-intro {
+/* Service Packages Section Fix */
+.service-packages {
     padding: 4rem 2rem;
-    text-align: center;
-    background-color: var(--light-background);
+    background: var(--light-background);
 }
 
-.pricing-intro h2 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
+.service-packages .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
 }
 
-.pricing-intro p {
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.pricing-note {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: var(--accent-color);
+.service-packages h2 {
+    text-align: left;
+    margin-bottom: 2.5rem;
     color: var(--text-color);
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
 }
 
-.pricing-note i {
-    font-size: 1.2rem;
-    flex-shrink: 0;
-}
-
-.pricing-note p {
-    margin: 0;
-    line-height: 1.4;
-    display: flex;
-    align-items: center;
-}
-
-/* Package Grid */
+/* Package Grid (unchanged) */
 .package-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 2rem;
+    padding: 2rem 0rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -2606,7 +2714,7 @@ body.dark-mode #scheduling-form select {
 /* Additional Services */
 .additional-services {
     padding: 4rem 2rem;
-    background-color: var(--light-background);
+ background: white;
 }
 
 .additional-services h2 {
@@ -2624,6 +2732,7 @@ body.dark-mode #scheduling-form select {
 }
 
 .service-card {
+    background-color: var(--light-background);
     background: white;
     padding: 2rem;
     border-radius: 15px;
@@ -2927,4 +3036,190 @@ body.dark-mode #scheduling-form select {
     .work-card img {
         height: 140px;
     }
+}
+
+.portfolio-hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 8rem 2rem 4rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+.portfolio-hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.portfolio-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.portfolio-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #60a5fa, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.portfolio-hero .subtitle {
+    font-size: 1.25rem;
+    color: #94a3b8;
+}
+
+@media (max-width: 1024px) {
+    .portfolio-hero-content h1 {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 768px) {
+    .portfolio-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .portfolio-hero .subtitle {
+        font-size: 1.1rem;
+    }
 } 
+
+.portfolio-masonry {
+  column-count: 2;
+  column-gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.portfolio-card {
+  display: inline-block;
+  /* Removed width: 100%; */
+  max-width: 500px;
+  margin-bottom: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(96, 165, 250, 0.10);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  break-inside: avoid;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  max-width: 100%;
+}
+
+.portfolio-cta {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.portfolio-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.portfolio-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.portfolio-card .cta-button {
+  width: 100%;
+  max-width: 320px;
+  margin: 1.5rem auto 0 auto;
+  display: block;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    .services-hero .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .services-hero h1 {
+        font-size: 3rem;
+    }
+    .services-hero .subtitle {
+        margin: 0 auto 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero h1 {
+        font-size: 2.5rem;
+    }
+    .services-hero .subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+/* Reinsert media queries for services hero (and portfolio hero) */
+@media (max-width: 1024px) {
+    .services-hero .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .services-hero h1 {
+        font-size: 3rem;
+    }
+    .services-hero .subtitle {
+        margin: 0 auto 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero h1 {
+        font-size: 2.5rem;
+    }
+    .services-hero .subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+/* (Optional) Reinsert media queries for portfolio hero (if needed) */
+@media (max-width: 1024px) {
+    .portfolio-hero .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .portfolio-hero h1 {
+        font-size: 3rem;
+    }
+    .portfolio-hero .subtitle {
+        margin: 0 auto 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-hero h1 {
+        font-size: 2.5rem;
+    }
+    .portfolio-hero .subtitle {
+        font-size: 1.1rem;
+    }
+}
