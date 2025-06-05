@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="English">
+    <link rel="canonical" href="https://codyjwebstudio.com/capabilities.html">
     <title>Our Capabilities | Cody J Web Studio</title>
     <meta name="description" content="Explore the advanced features and capabilities we offer in web development, from interactive elements to technical implementations.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codyjwebstudio.com/capabilities.html">
+    <meta property="og:title" content="Our Capabilities | Cody J Web Studio">
+    <meta property="og:description" content="Explore the advanced features and capabilities we offer in web development, from interactive elements to technical implementations.">
+    <meta property="og:image" content="https://codyjwebstudio.com/images/logogeneric.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" href="favicon-32.png">
     <link rel="stylesheet" href="styles/main.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -239,7 +252,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Cody J Web Studio. All rights reserved.</p>
+            <p>&copy; 2025 Cody J Web Studio. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="legal/privacy-policy.html">Privacy Policy</a> |
+                <a href="legal/terms-of-service.html">Terms of Service</a> |
+                <a href="legal/cookie-policy.html">Cookie Policy</a>
+            </div>
         </div>
     </footer>
 
@@ -293,69 +311,6 @@
     function toggleCapabilitiesDarkMode() {
         document.body.classList.toggle('dark-mode');
     }
-    </script>
-
-    <!-- Social Media Tab Switching -->
-    <script>
-    // Social Media Tab Switching
-    document.addEventListener('DOMContentLoaded', function() {
-        const feedTabs = document.querySelectorAll('.feed-tab');
-        const feedContent = document.querySelector('.feed-content');
-        
-        // Instagram tab placeholder
-        function handleInstagramAuth() {
-            feedContent.innerHTML = `
-                <div class="instagram-preview">
-                    <i class="fab fa-instagram" style="font-size: 2rem; color: #E1306C; margin-bottom: 1rem;"></i>
-                    <p>Instagram integration coming soon</p>
-                    <div class="feed-placeholder" style="background: #f3f4f6; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-                        <p style="color: var(--light-text); font-size: 0.9rem;">
-                            Instagram feed integration will be implemented in a future update.
-                        </p>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Facebook tab placeholder
-        function handleFacebookAuth() {
-            feedContent.innerHTML = `
-                <div class="facebook-preview">
-                    <i class="fab fa-facebook" style="font-size: 2rem; color: #1877F2; margin-bottom: 1rem;"></i>
-                    <p>Facebook integration coming soon</p>
-                    <div class="feed-placeholder" style="background: #f3f4f6; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-                        <p style="color: var(--light-text); font-size: 0.9rem;">
-                            Facebook Graph API integration will be implemented next.
-                            This will allow displaying your Facebook page posts.
-                        </p>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Function to switch tabs
-        function switchTab(tab) {
-            // Remove active class from all tabs
-            feedTabs.forEach(t => t.classList.remove('active'));
-            // Add active class to clicked tab
-            tab.classList.add('active');
-            // Handle platform-specific actions
-            const platform = tab.getAttribute('data-feed');
-            if (platform === 'instagram') {
-                handleInstagramAuth();
-            } else if (platform === 'facebook') {
-                handleFacebookAuth();
-            }
-        }
-
-        // Add click event listeners to tabs
-        feedTabs.forEach(tab => {
-            tab.addEventListener('click', () => switchTab(tab));
-        });
-
-        // Initialize with Instagram tab
-        switchTab(feedTabs[0]);
-    });
     </script>
 
     <!-- Scheduling Modal -->

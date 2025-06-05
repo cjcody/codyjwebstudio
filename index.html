@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cody J Web Studio | Professional Web Development Services</title>
     <meta name="description" content="Cody J Web Studio - Creating beautiful, responsive websites for businesses and individuals. Professional web development services tailored to your needs.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codyjwebstudio.com/">
+    <meta property="og:title" content="Cody J Web Studio | Professional Web Development Services">
+    <meta property="og:description" content="Creating beautiful, responsive websites for businesses and individuals. Professional web development services tailored to your needs.">
+    <meta property="og:image" content="https://codyjwebstudio.com/images/logogeneric.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" href="favicon-32.png">
     <link rel="stylesheet" href="styles/main.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -194,11 +205,94 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Cody J Web Studio. All rights reserved.</p>
+            <p>&copy; 2025 Cody J Web Studio. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="legal/privacy-policy.html">Privacy Policy</a> |
+                <a href="legal/terms-of-service.html">Terms of Service</a> |
+                <a href="legal/cookie-policy.html">Cookie Policy</a>
+            </div>
         </div>
     </footer>
 
     <script src="scripts/main.js"></script>
     <script src="scripts/chat.js"></script>
+    <script src="scripts/cookie-consent.js"></script>
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Cody J Web Studio",
+        "url": "https://codyjwebstudio.com",
+        "description": "Professional web development services creating beautiful, responsive websites for businesses and individuals.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://codyjwebstudio.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Cody J Web Studio",
+        "url": "https://codyjwebstudio.com",
+        "logo": "https://codyjwebstudio.com/images/logogeneric.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+44-7378-776-848",
+            "contactType": "customer service",
+            "email": "codyjwebstudio@gmail.com",
+            "availableLanguage": "English"
+        },
+        "sameAs": [
+            "https://www.facebook.com/share/1DYnkF3u1u/",
+            "https://www.linkedin.com/in/cody-jennings-99103636a"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Web Development",
+        "provider": {
+            "@type": "Organization",
+            "name": "Cody J Web Studio"
+        },
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web Development Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Web Design",
+                        "description": "Custom, responsive designs that look great on any device"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Mobile-First Development",
+                        "description": "Websites optimized for mobile devices first"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "SEO Optimization",
+                        "description": "Help your website rank better in search engines"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
 </body>
 </html> 
