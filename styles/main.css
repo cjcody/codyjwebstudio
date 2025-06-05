@@ -3113,7 +3113,7 @@ body.dark-mode #scheduling-form select {
   background: white;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(96, 165, 250, 0.10);
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  padding: .5rem .5rem .5rem .5rem;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
@@ -3125,7 +3125,6 @@ body.dark-mode #scheduling-form select {
   height: 180px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 1rem;
   max-width: 100%;
 }
 
@@ -3143,14 +3142,6 @@ body.dark-mode #scheduling-form select {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   opacity: 0.9;
-}
-
-.portfolio-card .cta-button {
-  width: 100%;
-  max-width: 320px;
-  margin: 1.5rem auto 0 auto;
-  display: block;
-  box-sizing: border-box;
 }
 
 @media (max-width: 1024px) {
