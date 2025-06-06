@@ -2598,10 +2598,7 @@ body.dark-mode #scheduling-form select {
     background: var(--light-background);
 }
 
-.service-packages .container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
+
 
 .service-packages h2 {
     text-align: left;
@@ -2614,9 +2611,6 @@ body.dark-mode #scheduling-form select {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 2rem 0rem;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .package-card {
@@ -2787,7 +2781,7 @@ body.dark-mode #scheduling-form select {
 
 /* FAQ Section */
 .pricing-faq {
-    padding: 4rem 2rem;
+    padding: 4rem 0rem;
 }
 
 .pricing-faq h2 {
@@ -2857,7 +2851,6 @@ body.dark-mode #scheduling-form select {
 
     .package-grid {
         grid-template-columns: 1fr;
-        padding: 1rem;
     }
 
     .services-grid {
