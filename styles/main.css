@@ -2880,7 +2880,7 @@ body.dark-mode #scheduling-form select {
 }
 
 .why-me {
-    padding: 4rem 2rem;
+    padding: 4rem 0rem;
     background: white;
 }
 
@@ -2914,7 +2914,7 @@ body.dark-mode #scheduling-form select {
 
 .testimonial-section {
     background: var(--light-background);
-    padding: 4rem 2rem;
+    padding: 4rem 0rem;
 }
 
 .testimonial-section h2 {
