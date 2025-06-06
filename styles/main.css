@@ -975,7 +975,7 @@ html {
 
 /* About Story Section */
 .about-story {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: var(--light-background);
 }
 
@@ -1020,7 +1020,7 @@ html {
 
 /* Values Section */
 .values {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: white;
 }
 
@@ -1065,7 +1065,7 @@ html {
 
 /* Team Section */
 .team {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: var(--light-background);
 }
 
@@ -1132,7 +1132,7 @@ html {
 
 /* Why Choose Us Section */
 .why-choose-us {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: white;
 }
 
