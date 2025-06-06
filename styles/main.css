@@ -511,7 +511,7 @@ nav {
 }
 
 .services h2 {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .services-grid {
@@ -1027,7 +1027,7 @@ html {
 .values h2 {
     text-align: left;
     color: var(--text-color);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .values-grid {
@@ -1072,7 +1072,7 @@ html {
 .team h2 {
     text-align: left;
     color: var(--text-color);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .team-grid {
@@ -1139,7 +1139,7 @@ html {
 .why-choose-us h2 {
     text-align: left;
     color: var(--text-color);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .features-grid {
@@ -2602,7 +2602,7 @@ body.dark-mode #scheduling-form select {
 
 .service-packages h2 {
     text-align: left;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     color: var(--text-color);
 }
 
@@ -2918,7 +2918,7 @@ body.dark-mode #scheduling-form select {
 }
 
 .testimonial-section h2 {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .testimonials {
