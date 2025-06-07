@@ -113,7 +113,7 @@
                     
                     <div class="contact-form-container">
                         <h2>Send Us a Message</h2>
-                        <form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbx62hr3mUln_kGR09glSpbvrhQF1h5VWC13h7z1Hm9zjkIsh20G7AG6wQv-auKMCo4fAw/exec" method="POST">
+                        <form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbz4QtROLmUc9KqkAkGSRZPoHAKPu9dLrLtTnOCug9eKL3V7U4IqNhUFrawVkuHh4EPNig/exec" method="POST">
                             <div style="display:none;">
                                 <label for="website">Website</label>
                                 <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -136,7 +136,7 @@
                                        id="email" 
                                        name="email" 
                                        required 
-                                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                       pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                                        title="Please enter a valid email address (e.g., name@example.com)"
                                        placeholder="Enter your email address">
                             </div>
@@ -265,6 +265,7 @@
 
     <script src="scripts/main.js"></script>
     <script src="scripts/chat.js"></script>
+    <script src="scripts/cookie-consent.js"></script>
     <script>
     document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
