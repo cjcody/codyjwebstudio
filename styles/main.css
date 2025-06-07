@@ -3340,10 +3340,9 @@ body.dark-mode #scheduling-form select {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(10px);
+    background: #1e293b;
     padding: 1rem;
-    z-index: 1000;
+    z-index: 2000;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -3374,29 +3373,37 @@ body.dark-mode #scheduling-form select {
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-.cookie-accept-all {
-    background: linear-gradient(135deg, #60a5fa, #8b5cf6);
+.accept-all {
+    background: #3b82f6;
     color: white;
 }
 
-.cookie-accept-essential {
-    background: transparent;
-    border: 1px solid #60a5fa !important;
-    color: #60a5fa;
+.accept-all:hover {
+    background: #2563eb;
 }
 
-.cookie-learn-more {
+.essential-only {
+    background: transparent;
+    border: 1px solid #3b82f6 !important;
+    color: #3b82f6;
+}
+
+.essential-only:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.learn-more {
     color: #94a3b8;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
 
-.cookie-learn-more:hover {
-    color: #60a5fa;
+.learn-more:hover {
+    color: #3b82f6;
 }
 
 @media (max-width: 768px) {
