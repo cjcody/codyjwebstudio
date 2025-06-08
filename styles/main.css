@@ -1175,25 +1175,6 @@ html {
     color: var(--light-text);
 }
 
-/* CTA Section */
-.cta-section {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.cta-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.cta-section p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
 .cta-buttons {
     display: flex;
     gap: 1rem;
@@ -2821,7 +2802,7 @@ body.dark-mode #scheduling-form select {
 .cta-section {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
-    padding: 4rem 2rem;
+    padding: 4rem 0rem;
     text-align: center;
 }
 
