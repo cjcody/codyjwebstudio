@@ -285,7 +285,7 @@ nav {
 }
 
 .hero-text h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     font-weight: 800;
@@ -757,7 +757,6 @@ nav {
 
 .faq-section h2 {
     text-align: center;
-    font-size: 2.5rem;
     margin-bottom: 3rem;
     color: var(--text-color);
 }
@@ -817,7 +816,7 @@ nav {
     }
 
     .faq-section h2 {
-        font-size: 2rem;
+        /* font-size removed to inherit default */
     }
 
     .faq-grid {
@@ -873,7 +872,7 @@ footer {
     }
     
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .hero p {
@@ -1363,7 +1362,7 @@ html {
 
 .map-section h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
     color: var(--text-color);
 }
@@ -1384,7 +1383,7 @@ html {
 
 @media (max-width: 768px) {
     .map-section h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .map-container iframe {
@@ -1496,7 +1495,7 @@ html {
     }
     
     .map-section h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .map-container iframe {
@@ -2769,7 +2768,6 @@ body.dark-mode #scheduling-form select {
     text-align: center;
     color: var(--text-color);
     margin-bottom: 3rem;
-    font-size: 2.5rem;
 }
 
 .faq-grid {
@@ -3500,7 +3498,7 @@ body.dark-mode .payment-info {
     text-align: center;
     color: var(--text-color);
     margin-bottom: 1rem;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 
 .local-services p {
@@ -3574,7 +3572,7 @@ body.dark-mode .area-card p {
 /* Responsive design for local services */
 @media (max-width: 768px) {
     .local-services h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .local-services p {
