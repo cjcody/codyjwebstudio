@@ -101,7 +101,7 @@ class ChatWidget {
             },
             pricing: {
                 keywords: ['price', 'pricing', 'cost', 'how much', 'fee', 'rates', 'budget', 'expensive', 'cheap', 'affordable'],
-                response: 'Our new project pricing starts at $300 and our monthly maintenace plans start at $50/month. Visit our contact page if you\'d like to schedule a free consultation to discuss your needs.'
+                response: 'Our new project pricing starts at £300 and our monthly maintenace plans start at £50/month. Visit our contact page if you\'d like to schedule a free consultation to discuss your needs.'
             },
             contact: {
                 keywords: ['contact', 'email', 'phone', 'call', 'reach', 'get in touch', 'message', 'text', 'whatsapp'],
