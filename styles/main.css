@@ -625,10 +625,6 @@ nav {
     align-items: center;
 }
 
-.contact-hero .hero-text {
-    text-align: left;
-}
-
 .contact-hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
@@ -795,7 +791,9 @@ nav {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-
+    .contact-hero .hero-text {
+        text-align: center;
+    }
     .contact-hero h1 {
         font-size: 3rem;
     }
@@ -924,10 +922,6 @@ html {
     align-items: center;
 }
 
-.about-hero .hero-text {
-    text-align: left;
-}
-
 .about-hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
@@ -986,7 +980,7 @@ html {
 }
 
 .story-content h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--text-color);
     text-align: left;
 }
@@ -1003,8 +997,6 @@ html {
 
 .image-container {
     position: relative;
-    border-radius: 12px;
-    overflow: hidden;
 }
 
 .story-logo {
@@ -1013,8 +1005,8 @@ html {
     max-width: 250px;
     display: block;
     margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Values Section */
@@ -1038,8 +1030,8 @@ html {
 .value-card {
     padding: 2rem;
     text-align: center;
-    background: var(--light-background);
-    border-radius: 12px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -1150,9 +1142,9 @@ html {
 .feature {
     padding: 2rem;
     text-align: center;
-    background: var(--light-background);
-    border-radius: 12px;
+    border-radius: 15px;
     transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .feature:hover {
@@ -1195,7 +1187,7 @@ html {
     }
 
     .story-content {
-        text-align: center;
+        text-align: left;
     }
 
     .about-hero h1 {
@@ -1216,7 +1208,7 @@ html {
     .values h2,
     .team h2,
     .why-choose-us h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .team-member {
@@ -1360,8 +1352,8 @@ html {
 }
 
 .map-section h2 {
-    text-align: center;
     font-size: 1.5rem;
+    text-align: center;
     margin-bottom: 2rem;
     color: var(--text-color);
 }
@@ -1378,6 +1370,12 @@ html {
     display: block;
     width: 100%;
     border-radius: 12px;
+}
+
+@media (max-width: 1024px) {
+    .map-section h2 {
+        text-align: left;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1698,10 +1696,6 @@ html {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-}
-
-.capabilities-hero .hero-text {
-    text-align: left;
 }
 
 .capabilities-hero h1 {
@@ -2551,10 +2545,6 @@ body.dark-mode #scheduling-form select {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-}
-
-.services-hero .hero-text {
-    text-align: left;
 }
 
 .services-hero h1 {
