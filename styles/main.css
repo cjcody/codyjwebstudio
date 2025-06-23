@@ -1848,7 +1848,9 @@ body.dark-mode .feed-content {
 .interactive-features,
 .technical-capabilities,
 .design-elements,
-.automated-booking {
+.automated-booking,
+.portfolio-projects,
+.template-projects {
     padding: 4rem 0;
 }
 
