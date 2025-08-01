@@ -740,6 +740,12 @@ nav {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+    .contact-info {
+        order: 2;
+    }
+    .contact-form-container {
+        order: 1;
+    }
     .contact-hero .hero-text {
         text-align: center;
     }

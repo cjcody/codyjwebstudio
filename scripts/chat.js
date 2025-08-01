@@ -105,7 +105,7 @@ class ChatWidget {
             },
             contact: {
                 keywords: ['contact', 'email', 'phone', 'call', 'reach', 'get in touch', 'message', 'text', 'whatsapp'],
-                response: 'You can reach us at codyjwebstudio@gmail.com or make use of our contact form.'
+                response: 'You can reach us at info@codyjwebstudio.com or make use of our contact form.'
             },
             services: {
                 keywords: ['service', 'services', 'what do you offer', 'offer', 'website', 'web design', 'development', 'seo', 'maintenance', 'brand', 'identity'],
