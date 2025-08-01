@@ -1,32 +1,5 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Handle contact form submission
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Honeypot check
-            var honeypot = document.getElementById('website');
-            if (honeypot && honeypot.value) {
-                // Detected as spam, do nothing
-                return;
-            }
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
-            // Here you would typically send the data to a server
-            // For now, we'll just log it and show a success message
-            console.log('Form submitted:', data);
-            
-            // Show success message
-            alert('You have officially reached Cody J Web Studios. I will get back to you soon!');
-            
-            // Reset form
-            contactForm.reset();
-        });
-    }
-
     // Add smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
