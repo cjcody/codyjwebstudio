@@ -101,7 +101,7 @@ class ChatWidget {
             },
             pricing: {
                 keywords: ['price', 'pricing', 'cost', 'how much', 'fee', 'rates', 'budget', 'expensive', 'cheap', 'affordable'],
-                response: 'Our new project pricing starts at £300 and our monthly maintenace plans start at £50/month. Visit our contact page if you\'d like to schedule a free consultation to discuss your needs.'
+                response: 'Our website design starts at $60 and our monthly maintenance plans start at $60/month. Visit our contact page if you\'d like to schedule a free consultation to discuss your needs.'
             },
             contact: {
                 keywords: ['contact', 'email', 'phone', 'call', 'reach', 'get in touch', 'message', 'text', 'whatsapp'],
@@ -121,7 +121,7 @@ class ChatWidget {
             },
             location: {
                 keywords: ['where', 'location', 'based', 'area', 'region', 'country', 'city', 'remote', 'online'],
-                response: 'We work remotely with clients worldwide, but our main office is in the UK. We can work with you regardless of your location!'
+                response: 'We\'re based in Florida, USA and serve businesses nationwide. We can work with you remotely regardless of your location!'
             },
             timeline: {
                 keywords: ['how long', 'timeline', 'duration', 'time', 'quick', 'fast', 'when', 'deadline', 'schedule'],

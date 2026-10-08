@@ -1,5 +1,11 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Auto-update copyright year
+    const copyrightEl = document.querySelector('.footer-bottom p');
+    if (copyrightEl) {
+        const currentYear = new Date().getFullYear();
+        copyrightEl.innerHTML = copyrightEl.innerHTML.replace(/\d{4}/, currentYear);
+    }
     // Add smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
