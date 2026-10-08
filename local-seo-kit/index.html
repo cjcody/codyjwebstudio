@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="language" content="English">
+    <link rel="canonical" href="https://cjcody.github.io/codyjwebstudio/local-seo-kit/">
+    <title>Local SEO Checklist & Tracker for Home Service Pros | Cody J Web Studio</title>
+    <meta name="description" content="Get your phone ringing from Google Maps with the Local SEO Checklist & Tracker. A DIY kit for plumbers, HVAC techs, roofers, electricians, landscapers, and home service businesses.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://cjcody.github.io/codyjwebstudio/local-seo-kit/">
+    <meta property="og:title" content="Local SEO Checklist & Tracker for Home Service Pros">
+    <meta property="og:description" content="A plain-English, step-by-step checklist and spreadsheet to help home service businesses show up when locals search for their services.">
+    <meta property="og:image" content="https://cjcody.github.io/codyjwebstudio/local-seo-kit/images/preview-cover.png">
+    <meta property="product:price:amount" content="5">
+    <meta property="product:price:currency" content="USD">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Local SEO Checklist & Tracker for Home Service Pros">
+    <meta name="twitter:description" content="A plain-English, step-by-step checklist and spreadsheet to help home service businesses show up when locals search for their services.">
+    <meta name="twitter:image" content="https://cjcody.github.io/codyjwebstudio/local-seo-kit/images/preview-cover.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+    <link rel="apple-touch-icon" href="../favicon-32.png">
+    <link rel="stylesheet" href="../styles/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Fira Code font for code elements -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+    <style>
+        .product-hero {
+            position: relative;
+            min-height: 80vh;
+            padding: 8rem 2rem 4rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+        }
+        .product-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .product-hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #60a5fa, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+        .product-hero .subtitle {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        .product-preview {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .product-preview img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        .product-preview img:hover {
+            transform: scale(1.02);
+        }
+        .preview-thumbnails {
+            display: flex;
+            gap: 0.75rem;
+        }
+        .preview-thumbnails img {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        .preview-thumbnails img:hover,
+        .preview-thumbnails img.active {
+            border-color: #8b5cf6;
+        }
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #60a5fa;
+            margin: 1.5rem 0;
+        }
+        .buy-button {
+            display: inline-block;
+            padding: 1.25rem 2.5rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        .buy-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+        .secondary-cta {
+            display: block;
+            margin-top: 1rem;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .secondary-cta a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        .secondary-cta a:hover {
+            text-decoration: underline;
+        }
+        .product-section {
+            padding: 4rem 0;
+        }
+        .product-section:nth-child(even) {
+            background: var(--light-background);
+        }
+        .product-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+        .who-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .who-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .who-item i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .who-item p {
+            margin: 0;
+            color: var(--text-color);
+        }
+        .not-for {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #fef3c7;
+            border-radius: 12px;
+            border-left: 4px solid #f59e0b;
+        }
+        .not-for strong {
+            color: #92400e;
+        }
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .included-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .included-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        .included-card h3 i {
+            color: var(--primary-color);
+        }
+        .included-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .included-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--light-text);
+        }
+        .included-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+        .step-card {
+            text-align: center;
+            padding: 2rem;
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        .step-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        .step-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+        .faq-item p {
+            margin: 0;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        .policy-section {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .policy-box {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .policy-box h3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        .policy-box p {
+            color: var(--light-text);
+            margin: 0;
+        }
+        .final-cta {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+        }
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .final-cta .price-tag {
+            margin-bottom: 2rem;
+        }
+        .disclaimer {
+            font-size: 0.85rem;
+            color: var(--light-text);
+            max-width: 600px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        @media (max-width: 1024px) {
+            .product-hero .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            .product-hero h1 {
+                font-size: 2.25rem;
+            }
+            .product-preview {
+                align-items: center;
+            }
+            .preview-thumbnails {
+                justify-content: center;
+            }
+        }
+        @media (max-width: 768px) {
+            .product-hero h1 {
+                font-size: 1.85rem;
+            }
+            .product-hero .subtitle {
+                font-size: 1rem;
+            }
+            .price-tag {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <img src="../images/logogeneric.png" alt="Cody J Web Studio Logo">
+                <div class="text-logo">
+                    <span class="text-logo-main">Cody J</span>
+                    <span class="text-logo-sub">Web Studio</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../capabilities.html">Capabilities</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="index.html" class="active">Shop</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-overlay">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../capabilities.html">Capabilities</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="index.html" class="active">Shop</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-hero">
+            <div class="hero-background">
+                <div class="gradient-sphere"></div>
+                <div class="gradient-sphere"></div>
+                <div class="gradient-sphere"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Get Your Phone Ringing From Google Maps: The Local SEO Checklist & Tracker for Home Service Pros</h1>
+                    <p class="subtitle">A plain-English, step-by-step checklist and ready-to-use spreadsheet that helps plumbers, HVAC techs, roofers, electricians, landscapers, and cleaners show up when locals search for their services. No marketing degree required.</p>
+                    <div class="price-tag">$5</div>
+                    <!-- TODO: Replace href with your Stripe Payment Link -->
+                    <a href="https://buy.stripe.com/REPLACE_ME" class="buy-button">Get the Kit: $5 (Instant Download)</a>
+                    <p class="secondary-cta">Want it done for you? <a href="../contact.html">Hire Cody J Web Studio</a></p>
+                </div>
+                <div class="product-preview">
+                    <img src="images/preview-cover.png" alt="Local SEO Checklist Cover" id="main-preview">
+                    <div class="preview-thumbnails">
+                        <img src="images/preview-cover.png" alt="Cover page" class="active" onclick="changePreview(this)">
+                        <img src="images/preview-google-business-profile.png" alt="Google Business Profile checklist" onclick="changePreview(this)">
+                        <img src="images/preview-website-citations.png" alt="Website & Citations checklist" onclick="changePreview(this)">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-section">
+            <div class="container">
+                <h2>Who It's For</h2>
+                <div class="who-list">
+                    <div class="who-item">
+                        <i class="fas fa-user-hard-hat"></i>
+                        <p><strong>Owner-operators and small crews</strong> in the trades who handle their own marketing (or want to).</p>
+                    </div>
+                    <div class="who-item">
+                        <i class="fas fa-tools"></i>
+                        <p><strong>Plumbers, HVAC contractors, roofers, electricians, landscapers, house cleaners, painters, handymen, pest control, garage door, pool service</strong>, and other US home service businesses.</p>
+                    </div>
+                    <div class="who-item">
+                        <i class="fab fa-google"></i>
+                        <p>Businesses that have a Google Business Profile but <strong>aren't sure it's set up right</strong>.</p>
+                    </div>
+                    <div class="who-item">
+                        <i class="fas fa-phone-volume"></i>
+                        <p>Anyone tired of paying for leads and wanting <strong>more calls from their own listings</strong>.</p>
+                    </div>
+                    <div class="who-item">
+                        <i class="fas fa-clipboard-list"></i>
+                        <p>Office managers or family members who've been handed <strong>"the online stuff."</strong></p>
+                    </div>
+                </div>
+                <div class="not-for">
+                    <strong>Not for:</strong> businesses looking for a done-for-you service or guaranteed rankings. This is a DIY toolkit.
+                </div>
+            </div>
+        </section>
+
+        <section class="product-section">
+            <div class="container">
+                <h2>What's Included</h2>
+                <div class="included-grid">
+                    <div class="included-card">
+                        <h3><i class="fas fa-file-pdf"></i> Local SEO Checklist (6-Page PDF)</h3>
+                        <p>Checkbox-style tasks in plain English, covering:</p>
+                        <ul>
+                            <li>Google Business Profile setup and optimization (categories, services, hours, photos, posts, Q&A)</li>
+                            <li>Getting and responding to reviews on Google, Angi, Yelp, Nextdoor, and more</li>
+                            <li>Website basics: NAP consistency, service-area pages, title tags, mobile, and schema explained simply</li>
+                            <li>Citations and directories: Google, Bing Places, Apple Maps, Angi, Yelp, BBB, Thumbtack, Facebook</li>
+                            <li>Local content and job photos (before/after, project posts, seasonal tips)</li>
+                            <li>A monthly and quarterly maintenance routine</li>
+                        </ul>
+                    </div>
+                    <div class="included-card">
+                        <h3><i class="fas fa-file-excel"></i> Local SEO Tracker (Excel/Google Sheets)</h3>
+                        <p>Six ready-to-use tabs:</p>
+                        <ul>
+                            <li><strong>Overview:</strong> How to use it, plus a spot for your official business info</li>
+                            <li><strong>NAP Audit:</strong> Check that your Name, Address & Phone match everywhere</li>
+                            <li><strong>Directories:</strong> 20+ common US home-service directories, pre-filled</li>
+                            <li><strong>Reviews Log:</strong> Never miss a review response again</li>
+                            <li><strong>Monthly Checklist:</strong> Posts, photos, reviews, and fixes at a glance</li>
+                            <li><strong>Keyword Tracker:</strong> Log where you show up for the searches that matter</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 2rem; color: var(--light-text);"><i class="fas fa-info-circle"></i> Includes quick-start instructions for opening the files and printing the checklist.</p>
+            </div>
+        </section>
+
+        <section class="product-section">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Download</h3>
+                        <p>Get the kit instantly after purchase.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Print & Work Through</h3>
+                        <p>Print the checklist (or use it on screen) and work through Sections 1–4. Most businesses can knock out the setup in a few evenings.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Track Your Progress</h3>
+                        <p>Open the tracker in Excel or Google Sheets and log your listings, reviews, and keywords as you go.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Maintain Monthly</h3>
+                        <p>Spend 1–2 hours a month on the maintenance routine to keep your profile active and accurate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>Do I need to be good with computers or marketing?</h3>
+                        <p>No. Every step is written in plain English, and any technical term gets a short explanation. If you can fill out a form and use a spreadsheet, you can use this kit.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Will this guarantee I rank #1 on Google?</h3>
+                        <p>No, and be careful of anyone who promises that. Rankings depend on things like your location, competition, and reviews. This kit gives you a clear, organized way to cover the fundamentals that local businesses commonly work on. Results vary.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does it work with Google Sheets, or do I need Excel?</h3>
+                        <p>Both. The tracker is a standard Excel file (.xlsx). You can open it in Microsoft Excel, or upload it to Google Sheets for free. Instructions are included.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is this a physical product?</h3>
+                        <p>No. It's a digital download (PDF + spreadsheet). Nothing will be shipped. You can print the checklist at home or at any print shop.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-section">
+            <div class="container">
+                <div class="policy-section">
+                    <div class="policy-box">
+                        <h3><i class="fas fa-undo"></i> Refund Policy</h3>
+                        <p>Because this is an instantly downloadable digital product, all sales are final. If your files won't open, are damaged, or aren't what was described, email us at <a href="mailto:codyjwebstudio@gmail.com">codyjwebstudio@gmail.com</a> within 14 days of purchase and we'll fix it or refund you.</p>
+                    </div>
+                    <div class="policy-box">
+                        <h3><i class="fas fa-robot"></i> AI Assistance Note</h3>
+                        <p>This kit was created with the help of AI tools and reviewed and edited by Cody J Web Studio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container">
+                <h2>Ready to Get Found by Local Customers?</h2>
+                <div class="price-tag">$5</div>
+                <!-- TODO: Replace href with your Stripe Payment Link -->
+                <a href="https://buy.stripe.com/REPLACE_ME" class="buy-button">Get the Kit: $5 (Instant Download)</a>
+                <p class="secondary-cta">Want it done for you? <a href="../contact.html">Hire Cody J Web Studio</a></p>
+                <p class="disclaimer">This is a marketing checklist, not legal or professional advice. Results vary.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Cody J Web Studio</h3>
+                <p>Creating digital experiences that matter</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: codyjwebstudio@gmail.com</p>
+                <p><a href="https://wa.me/447378776848" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;"><i class="fab fa-whatsapp"></i> Message on WhatsApp</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1DYnkF3u1u/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/cody-jennings-99103636a" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/codyjwebstudio?igsh=cDIzdTAwajFpcmE5&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Cody J Web Studio. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="../legal/privacy-policy.html">Privacy Policy</a> |
+                <a href="../legal/terms-of-service.html">Terms of Service</a> |
+                <a href="../legal/cookie-policy.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+    function changePreview(thumbnail) {
+        document.getElementById('main-preview').src = thumbnail.src;
+        document.querySelectorAll('.preview-thumbnails img').forEach(img => img.classList.remove('active'));
+        thumbnail.classList.add('active');
+    }
+    </script>
+
+    <!-- Product Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "The Home Service Pro's Local SEO Checklist & Tracker",
+        "description": "A plain-English, step-by-step checklist and ready-to-use spreadsheet that helps plumbers, HVAC techs, roofers, electricians, landscapers, and cleaners show up when locals search for their services.",
+        "image": "https://cjcody.github.io/codyjwebstudio/local-seo-kit/images/preview-cover.png",
+        "brand": {
+            "@type": "Brand",
+            "name": "Cody J Web Studio"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "5.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://cjcody.github.io/codyjwebstudio/local-seo-kit/"
+        }
+    }
+    </script>
+</body>
+</html>
