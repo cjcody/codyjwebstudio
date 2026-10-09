@@ -588,11 +588,18 @@
     </footer>
 
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/lightbox.js"></script>
     <script>
     function changePreview(thumbnail) {
         document.getElementById('main-preview').src = thumbnail.src;
+        document.getElementById('main-preview').alt = thumbnail.alt;
         document.querySelectorAll('.preview-thumbnails img').forEach(img => img.classList.remove('active'));
         thumbnail.classList.add('active');
+        var wrapper = document.querySelector('.lightbox-trigger:not(.thumbnail-trigger)');
+        if (wrapper) {
+            wrapper.href = thumbnail.src;
+            wrapper.setAttribute('aria-label', 'View larger: ' + (thumbnail.alt || 'Product preview'));
+        }
     }
     </script>
 
