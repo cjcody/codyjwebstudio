@@ -2,16 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Function to load non-essential resources
     function loadNonEssentialResources() {
-        // Load weather widget if on capabilities page
-        if (window.location.pathname.endsWith('capabilities.html')) {
-            if (!document.querySelector('script[src="scripts/weather-widget.js"]')) {
-                const script = document.createElement('script');
-                script.src = 'scripts/weather-widget.js';
-                script.defer = true;
-                document.body.appendChild(script);
-            }
-        }
-
         // Enable social media tracking
         document.querySelectorAll('.social-links a').forEach(link => {
             link.setAttribute('data-consent', 'accepted');
@@ -20,12 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to remove non-essential resources
     function removeNonEssentialResources() {
-        // Remove weather widget if on capabilities page
-        const weatherScript = document.querySelector('script[src="scripts/weather-widget.js"]');
-        if (weatherScript) {
-            weatherScript.remove();
-        }
-
         // Disable social media tracking
         document.querySelectorAll('.social-links a').forEach(link => {
             link.removeAttribute('data-consent');
