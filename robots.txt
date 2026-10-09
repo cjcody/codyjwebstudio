@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://codyjwebstudio.com/sitemap.xml
+Sitemap: https://cjcody.github.io/codyjwebstudio/sitemap.xml
 
 # Disallow crawling of any private or admin areas (if added in future)
 Disallow: /admin/
