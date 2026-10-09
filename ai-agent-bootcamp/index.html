@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="language" content="English">
+    <link rel="canonical" href="https://cjcody.github.io/codyjwebstudio/ai-agent-bootcamp/">
+    <title>The AI Agent Bootcamp for Small Business | Cody J Web Studio</title>
+    <meta name="description" content="Stop chatting with AI. Start getting real work done with it. Build a website, sell a digital product, and automate your busywork—step by step. $19 for all 10 modules.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://cjcody.github.io/codyjwebstudio/ai-agent-bootcamp/">
+    <meta property="og:title" content="The AI Agent Bootcamp for Small Business">
+    <meta property="og:description" content="A hands-on bootcamp that takes you from 'I've tried ChatGPT' to a live website, a working checkout, and automations that run themselves.">
+    <meta property="og:image" content="https://cjcody.github.io/codyjwebstudio/ai-agent-bootcamp/images/preview-1-cover-and-contents.png">
+    <meta property="product:price:amount" content="19.00">
+    <meta property="product:price:currency" content="USD">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The AI Agent Bootcamp for Small Business">
+    <meta name="twitter:description" content="A hands-on bootcamp that takes you from 'I've tried ChatGPT' to a live website, a working checkout, and automations that run themselves.">
+    <meta name="twitter:image" content="https://cjcody.github.io/codyjwebstudio/ai-agent-bootcamp/images/preview-1-cover-and-contents.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+    <link rel="apple-touch-icon" href="../favicon-32.png">
+    <link rel="stylesheet" href="../styles/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Fira Code font for code elements -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+    <style>
+        .course-hero {
+            position: relative;
+            min-height: 90vh;
+            padding: 8rem 2rem 4rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+        }
+        .course-hero .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .course-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .course-hero .eyebrow {
+            font-size: 0.9rem;
+            color: #60a5fa;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        .course-hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #60a5fa, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.15;
+        }
+        .course-hero .tagline {
+            font-size: 1.35rem;
+            color: #e2e8f0;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .course-hero .subtitle {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .price-highlight {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #60a5fa;
+            margin-bottom: 1.5rem;
+        }
+        .price-highlight span {
+            font-size: 1rem;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+        .buy-button {
+            display: inline-block;
+            padding: 1.25rem 2.5rem;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        .buy-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+        .hero-meta {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        .hero-preview img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .course-section {
+            padding: 4rem 0;
+        }
+        .course-section:nth-child(even) {
+            background: var(--light-background);
+        }
+        .course-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+        .build-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .build-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .build-item i {
+            font-size: 1.5rem;
+            color: #10b981;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+        .build-item p {
+            margin: 0;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+        .who-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .who-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .who-item i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .included-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .included-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .included-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        .included-card p {
+            color: var(--light-text);
+            margin: 0;
+        }
+        .modules-intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .modules-intro p {
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .savings-banner {
+            background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .savings-banner strong {
+            font-size: 1.25rem;
+        }
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .module-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+        }
+        .module-card.free {
+            border: 2px solid #10b981;
+        }
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+        .module-number {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .module-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+        .module-price.free-label {
+            color: #10b981;
+        }
+        .module-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+        .module-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+        .module-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+        }
+        .module-card li {
+            padding: 0.25rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        .module-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        .module-cta {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+        .module-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        .module-cta.free-cta {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        .module-cta.free-cta:hover {
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        .preview-gallery {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .preview-gallery img {
+            max-width: 350px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .preview-gallery img:hover {
+            transform: scale(1.02);
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+        .faq-item p {
+            margin: 0;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .policy-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        .policy-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .policy-card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+        .policy-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        .final-cta {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+        }
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .final-cta .price-highlight {
+            margin-bottom: 2rem;
+        }
+        .disclaimer {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            line-height: 1.6;
+        }
+        .cross-sell {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .cross-sell h3 {
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+        .cross-sell p {
+            color: var(--light-text);
+            margin-bottom: 1rem;
+        }
+        .cross-sell a {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .cross-sell a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 1024px) {
+            .course-hero .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            .course-hero h1 {
+                font-size: 2.25rem;
+            }
+            .hero-preview {
+                order: -1;
+            }
+            .hero-preview img {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        @media (max-width: 768px) {
+            .course-hero h1 {
+                font-size: 1.85rem;
+            }
+            .course-hero .tagline {
+                font-size: 1.15rem;
+            }
+            .price-highlight {
+                font-size: 2rem;
+            }
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <img src="../images/logogeneric.png" alt="Cody J Web Studio Logo">
+                <div class="text-logo">
+                    <span class="text-logo-main">Cody J</span>
+                    <span class="text-logo-sub">Web Studio</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../capabilities.html">Capabilities</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../shop/" class="active">Shop</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-overlay">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../capabilities.html">Capabilities</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../shop/" class="active">Shop</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="course-hero">
+            <div class="hero-background">
+                <div class="gradient-sphere"></div>
+                <div class="gradient-sphere"></div>
+                <div class="gradient-sphere"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="eyebrow">Hands-on · Beginner-friendly · Step by step</p>
+                    <h1>The AI Agent Bootcamp for Small Business</h1>
+                    <p class="tagline">Stop chatting with AI. Start getting real work done with it.</p>
+                    <p class="subtitle">The hands-on bootcamp that takes you from "I've tried ChatGPT" to a live website, a working checkout, and automations that run themselves—one step-by-step project at a time.</p>
+                    <div class="price-highlight">$19 <span>for all 10 modules</span></div>
+                    <a href="https://buy.stripe.com/8x26oz8avbxA2wtaKa8bS02" class="buy-button">Get the Bootcamp for $19</a>
+                    <p class="hero-meta">Instant download · PDF guide + starter files · Made for US small businesses, freelancers and beginners</p>
+                </div>
+                <div class="hero-preview">
+                    <img src="images/preview-1-cover-and-contents.png" alt="The AI Agent Bootcamp for Small Business - Course preview">
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>Sound Familiar?</h2>
+                <p style="max-width: 800px; margin: 0 auto 2rem; color: var(--light-text); line-height: 1.7;">You've asked an AI chatbot a few questions. Maybe it wrote you an email or a caption. It was handy, but it didn't really <em>change</em> anything in your business. Meanwhile, you keep hearing that AI "agents" can build websites, handle admin, and automate whole workflows. You just don't know where to start, which tools to trust, or how to do it without breaking something or leaking a password.</p>
+                <p style="max-width: 800px; margin: 0 auto; color: var(--text-color); font-weight: 500; font-size: 1.1rem;"><strong>The AI Agent Bootcamp for Small Business</strong> is the missing middle step: a clear, friendly, genuinely in-depth run-through that shows you how to use AI agents the way a working web studio does—and has you build real things as you go.</p>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>What You'll Build</h2>
+                <div class="build-grid">
+                    <div class="build-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>A one-page business website</strong>, built with an AI coding agent and published free on the internet</p>
+                    </div>
+                    <div class="build-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>A working contact form and basic SEO</strong>: search-friendly titles, structured data, Google Search Console, and a Google Business Profile plan</p>
+                    </div>
+                    <div class="build-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>A digital product with a real checkout</strong>: create it with AI, take payment with a payment link, and deliver it automatically</p>
+                    </div>
+                    <div class="build-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>Automations that run themselves</strong>: website leads go straight to a spreadsheet and ping your phone, plus an AI-drafted weekly report</p>
+                    </div>
+                    <div class="build-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>AI workflows for daily operations</strong>: research, email drafts, a 30-day content calendar, social posts, and customer replies—all with you approving what goes out</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>Who It's For</h2>
+                <div class="who-list">
+                    <div class="who-item">
+                        <i class="fas fa-store"></i>
+                        <p><strong>Small business owners</strong> who want a better website, faster admin, and less busywork—without hiring a developer for every change</p>
+                    </div>
+                    <div class="who-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <p><strong>Freelancers and side hustlers</strong> who want new skills to offer (websites, automations, AI setup) or digital products to sell</p>
+                    </div>
+                    <div class="who-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p><strong>Beginners</strong> who've used a chatbot a few times and want a safe, structured path to doing much more</p>
+                    </div>
+                </div>
+                <p style="margin-top: 2rem; text-align: center; color: var(--text-color);"><strong>No coding experience needed.</strong> You'll learn just enough web basics to direct AI tools confidently and review their work.</p>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>What's Included</h2>
+                <div class="included-grid">
+                    <div class="included-card">
+                        <i class="fas fa-book"></i>
+                        <h3>93-Page Course Guide</h3>
+                        <p>Beautifully designed PDF (US Letter, printable, with clickable links)</p>
+                    </div>
+                    <div class="included-card">
+                        <i class="fas fa-comments"></i>
+                        <h3>50-Prompt Library</h3>
+                        <p>Copy-paste prompts grouped by task (in the PDF and as a separate file)</p>
+                    </div>
+                    <div class="included-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>Website Starter Template</h3>
+                        <p>A clean, mobile-friendly one-page site for Project 1</p>
+                    </div>
+                    <div class="included-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>30-Day Plan & Tracker</h3>
+                        <p>Daily tasks, project tracker, tools log, and automations list (.xlsx)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>Preview</h2>
+                <div class="preview-gallery">
+                    <img src="images/preview-1-cover-and-contents.png" alt="Course cover and table of contents">
+                    <img src="images/preview-2-quick-win.png" alt="Quick win exercise showing step-by-step instructions">
+                    <img src="images/preview-3-projects.png" alt="Hands-on projects you'll build">
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>Buy Individual Modules</h2>
+                <div class="modules-intro">
+                    <p>Not sure yet? Module 1 is free—no email required. Or grab individual modules for $5 each.</p>
+                </div>
+                <div class="savings-banner">
+                    <strong>Save $26:</strong> 9 paid modules cost $45 separately. Get everything for just $19 with the full bundle!
+                </div>
+                <div class="modules-grid">
+                    <div class="module-card free">
+                        <div class="module-header">
+                            <span class="module-number">Module 1</span>
+                            <span class="module-price free-label">FREE</span>
+                        </div>
+                        <h3>AI Agents vs. Chatbots</h3>
+                        <p>Understand what AI agents really are, build a working web page with one prompt, and set up your AI toolkit.</p>
+                        <ul>
+                            <li>Build an interactive web page in ~5 minutes</li>
+                            <li>Chatbots vs. assistants vs. agents explained</li>
+                            <li>Pick the right tools for your budget</li>
+                        </ul>
+                        <a href="free/AI_Agent_Bootcamp_Module_01.pdf" class="module-cta free-cta" download>Download Free</a>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 2</span>
+                            <span class="module-price">$5</span>
+                        </div>
+                        <h3>Prompting That Works</h3>
+                        <p>Write prompts that get useful results the first time, build reusable templates, and catch made-up facts.</p>
+                        <ul>
+                            <li>The 5-part prompt formula</li>
+                            <li>Reusable prompt kit and templates</li>
+                            <li>4-check routine for catching hallucinations</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/00weV5aiD1X03AxcSi8bS03" class="module-cta">Buy Module 2</a>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 3</span>
+                            <span class="module-price">$5</span>
+                        </div>
+                        <h3>Safety & Security Basics</h3>
+                        <p>Use AI agents safely: protect API keys, give agents only the access they need, and review everything.</p>
+                        <ul>
+                            <li>Where secrets belong (and never belong)</li>
+                            <li>Restricted keys and least privilege</li>
+                            <li>30-minute security setup</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/28E00b8av8loc736tU8bS04" class="module-cta">Buy Module 3</a>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 4</span>
+                            <span class="module-price">$5</span>
+                        </div>
+                        <h3>Web Dev Basics for Non-Coders</h3>
+                        <p>Web development basics in plain English: HTML, CSS, JavaScript, Git, GitHub, and hosting.</p>
+                        <ul>
+                            <li>Edit HTML, CSS, JS on your own page</li>
+                            <li>Repos, branches, commits explained simply</li>
+                            <li>Your first GitHub repo</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/fZu00b76reJM6MJ05w8bS05" class="module-cta">Buy Module 4</a>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 5</span>
+                            <span class="module-price">$5</span>
+                        </div>
+                        <h3>Project 1: Build & Publish Your Website</h3>
+                        <p>Build a one-page business website with an AI coding agent, review it properly, and publish it free.</p>
+                        <ul>
+                            <li>Customize the included template with AI</li>
+                            <li>Publish free on GitHub Pages</li>
+                            <li>Connect a custom domain</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/4gM3cn1M74583AxbOe8bS06" class="module-cta">Buy Module 5</a>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 6</span>
+                            <span class="module-price">$5</span>
+                        </div>
+                        <h3>Project 2: Contact Methods & Basic SEO</h3>
+                        <p>Add a working contact form and the SEO basics that matter, plus a Google Business Profile plan.</p>
+                        <ul>
+                            <li>Connect a contact form</li>
+                            <li>Titles, meta descriptions, structured data</li>
+                            <li>Google Business Profile basics</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/6oUdR10I39ps6MJ6tU8bS07" class="module-cta">Buy Module 6</a>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 7</span>
+                            <span class="module-price">$5</span>
+                        </div>
+                        <h3>Project 3: Sell a Digital Product</h3>
+                        <p>Create a digital product with AI, take payment with a payment link, and deliver it automatically.</p>
+                        <ul>
+                            <li>Create a PDF or spreadsheet product</li>
+                            <li>Set up a payment link</li>
+                            <li>Payment-checked delivery + US sales tax basics</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/9B600bgH19ps3AxdWm8bS08" class="module-cta">Buy Module 7</a>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 8</span>
+                            <span class="module-price">$5</span>
+                        </div>
+                        <h3>Project 4: Automations That Run Themselves</h3>
+                        <p>Build automations: website leads to a spreadsheet and your phone, plus an AI-drafted weekly report.</p>
+                        <ul>
+                            <li>Form → spreadsheet → notification</li>
+                            <li>AI triage step (optional)</li>
+                            <li>Scheduled weekly reports</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/3cI28j76r59c1sp05w8bS09" class="module-cta">Buy Module 8</a>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 9</span>
+                            <span class="module-price">$5</span>
+                        </div>
+                        <h3>Project 5: AI Agents for Business Ops</h3>
+                        <p>Set up AI workflows for research, email, content calendars, social posts, and customer replies.</p>
+                        <ul>
+                            <li>A reusable "Business Brain"</li>
+                            <li>30-day content calendar</li>
+                            <li>Reply library and review process</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/6oU5kv8avdFIgnj05w8bS0a" class="module-cta">Buy Module 9</a>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 10</span>
+                            <span class="module-price">$5</span>
+                        </div>
+                        <h3>Making Money With These Skills</h3>
+                        <p>Turn AI skills into services and products, with honest pricing, low-cost marketing, and professional habits.</p>
+                        <ul>
+                            <li>Service menu with packages</li>
+                            <li>Pricing basics and portfolio plan</li>
+                            <li>2-week outreach plan</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/cNi3cn1M78lo8UR5pQ8bS0b" class="module-cta">Buy Module 10</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>Do I need to know how to code?</h3>
+                        <p>No. The guide explains everything in plain English, and AI tools write the code. You'll learn just enough to review changes and fix small things yourself.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Which AI tools do I need to buy?</h3>
+                        <p>None to start. Every project can be started on free tiers. The guide explains when a paid plan is worth it, and always shows alternatives. Prices and free tiers change, so check each platform's current pricing.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does it work on Windows and Mac?</h3>
+                        <p>Yes. The tools used are browser-based or available for both. A Chromebook works for most projects.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How long does it take?</h3>
+                        <p>Most modules take about 1 to 2 hours. The included 30-day plan breaks everything into roughly 45 to 60 minutes a day, but you can go at your own pace.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Will it go out of date?</h3>
+                        <p>AI changes fast, so the guide is built to last: it names platforms instead of specific AI models, describes steps in a durable way instead of click-by-click menus, and links to each platform's official docs.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is it only for US businesses?</h3>
+                        <p>It's written for US small businesses (for example, US sales tax basics and US marketing rules), but most of the skills apply anywhere.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do I get it?</h3>
+                        <p>Right after checkout you'll go straight to a download page with the PDF, starter files, and a quick-start README. You'll also get a Stripe receipt by email.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Questions before buying?</h3>
+                        <p>Message Cody J Web Studio on WhatsApp: <a href="https://wa.me/447378776848" style="color: var(--primary-color);">wa.me/447378776848</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>Policies</h2>
+                <div class="policy-grid">
+                    <div class="policy-card">
+                        <i class="fas fa-undo"></i>
+                        <h3>Refund Policy</h3>
+                        <p>Because this is an instantly downloadable digital product, all sales are final. If your files won't open, are damaged, or aren't what was described, email us at codyjwebstudio@gmail.com within 14 days of purchase and we'll fix it or refund you.</p>
+                    </div>
+                    <div class="policy-card">
+                        <i class="fas fa-file-contract"></i>
+                        <h3>License</h3>
+                        <p>Personal and business use. You can use what you learn and build on your own sites and your clients' sites. No reselling or redistributing the course materials.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container">
+                <h2>Ready to Start Building?</h2>
+                <div class="price-highlight">$19 <span>for all 10 modules + starter files</span></div>
+                <a href="https://buy.stripe.com/8x26oz8avbxA2wtaKa8bS02" class="buy-button">Get the AI Agent Bootcamp for $19</a>
+                <p class="disclaimer">Educational content only; not legal, tax, or financial advice. Results vary. Product names are trademarks of their respective owners; Cody J Web Studio is not affiliated with or endorsed by them. © 2026 Cody J Web Studio</p>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <div class="cross-sell">
+                    <h3>Also Available</h3>
+                    <p>Already have a website? Get more local customers with the <strong>Local SEO Checklist & Tracker</strong>—a DIY kit to help home service businesses show up on Google Maps.</p>
+                    <a href="../local-seo-kit/">Get the Local SEO Kit for $4.50 →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Cody J Web Studio</h3>
+                <p>Creating digital experiences that matter</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: codyjwebstudio@gmail.com</p>
+                <p><a href="https://wa.me/447378776848" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;"><i class="fab fa-whatsapp"></i> Message on WhatsApp</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1DYnkF3u1u/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/cody-jennings-99103636a" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/codyjwebstudio?igsh=cDIzdTAwajFpcmE5&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Cody J Web Studio. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="../legal/privacy-policy.html">Privacy Policy</a> |
+                <a href="../legal/terms-of-service.html">Terms of Service</a> |
+                <a href="../legal/cookie-policy.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+
+    <!-- Course/Product Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "The AI Agent Bootcamp for Small Business",
+        "description": "A hands-on bootcamp that takes you from 'I've tried ChatGPT' to a live website, a working checkout, and automations that run themselves—one step-by-step project at a time.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Cody J Web Studio",
+            "url": "https://cjcody.github.io/codyjwebstudio/"
+        },
+        "image": "https://cjcody.github.io/codyjwebstudio/ai-agent-bootcamp/images/preview-1-cover-and-contents.png",
+        "offers": {
+            "@type": "Offer",
+            "price": "19.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://cjcody.github.io/codyjwebstudio/ai-agent-bootcamp/"
+        },
+        "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "online",
+            "courseWorkload": "PT20H"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "The AI Agent Bootcamp for Small Business",
+        "description": "A hands-on bootcamp that takes you from 'I've tried ChatGPT' to a live website, a working checkout, and automations that run themselves—one step-by-step project at a time. Includes 93-page PDF guide, 50-prompt library, website starter template, and 30-day plan tracker.",
+        "image": "https://cjcody.github.io/codyjwebstudio/ai-agent-bootcamp/images/preview-1-cover-and-contents.png",
+        "brand": {
+            "@type": "Brand",
+            "name": "Cody J Web Studio"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "19.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://cjcody.github.io/codyjwebstudio/ai-agent-bootcamp/"
+        }
+    }
+    </script>
+</body>
+</html>
