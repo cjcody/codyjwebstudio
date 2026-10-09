@@ -117,7 +117,7 @@ class ChatWidget {
             },
             portfolio: {
                 keywords: ['portfolio', 'work', 'projects', 'examples', 'show me', 'see', 'previous', 'past', 'samples'],
-                response: 'You can view our projects on the portfolio page.'
+                response: 'You can see a recent project on our services page, or check out the shop for our digital products and courses!'
             },
             location: {
                 keywords: ['where', 'location', 'based', 'area', 'region', 'country', 'city', 'remote', 'online'],
