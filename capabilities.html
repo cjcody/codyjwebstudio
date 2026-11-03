@@ -412,12 +412,13 @@
         });
     }
 
-    // Add this after your existing scheduling form code
     document.addEventListener('DOMContentLoaded', function() {
         const dateInput = document.getElementById('sched-date');
         const timeSelect = document.getElementById('sched-time');
         const timeSlotGroup = document.getElementById('time-slot-group');
-        const submitButton = document.querySelector('.submit-button');
+        
+        // Target the submit button strictly inside the scheduling form
+        const submitButton = schedulingForm.querySelector('button[type="submit"]');
         
         // Set minimum date to today
         const today = new Date();
@@ -439,21 +440,25 @@
             timeSelect.innerHTML = '<option value="">Checking availability...</option>';
             
             try {
-                // Check all time slots in parallel
-                const availabilityChecks = await Promise.all(
+                // Use Promise.allSettled so a single failed slot doesn't crash the UI
+                const results = await Promise.allSettled(
                     timeSlots.map(time => checkTimeSlotAvailability(date, time))
                 );
                 
                 // Filter available time slots
-                const availableSlots = timeSlots.filter((_, index) => availabilityChecks[index]);
+                const availableSlots = timeSlots.filter((_, index) => {
+                    return results[index].status === 'fulfilled' && results[index].value === true;
+                });
                 
                 // Update time select options
                 if (availableSlots.length > 0) {
                     timeSelect.innerHTML = `
                         <option value="">Select a time slot</option>
-                        ${availableSlots.map(time => `
-                            <option value="${time}">${time} - ${String(parseInt(time) + 1).padStart(2, '0')}:00</option>
-                        `).join('')}
+                        ${availableSlots.map(time => {
+                            const hour = parseInt(time.split(':')[0], 10);
+                            const nextHour = String(hour + 1).padStart(2, '0');
+                            return `<option value="${time}">${time} - ${nextHour}:00</option>`;
+                        }).join('')}
                     `;
                     timeSelect.disabled = false;
                 } else {
@@ -471,7 +476,7 @@
         dateInput.addEventListener('change', async function(e) {
             const selectedDate = e.target.value;
             if (selectedDate) {
-                submitButton.disabled = true;
+                submitButton.disabled = true; // This now correctly points to your modal's submit button
                 await checkAvailableTimeSlots(selectedDate);
                 submitButton.disabled = false;
             } else {
@@ -480,18 +485,17 @@
             }
         });
         
-        // Update form submission to not check availability again
+        // Update form submission
         if (schedulingForm) {
             schedulingForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
         
-        const formData = new FormData(schedulingForm);
-        const data = {};
-        formData.forEach((value, key) => {
-            data[key] = value;
-        });
-        
-                const submitButton = schedulingForm.querySelector('.submit-button');
+                const formData = new FormData(schedulingForm);
+                const data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+                
                 submitButton.disabled = true;
                 submitButton.textContent = 'Booking...';
                 
@@ -521,19 +525,19 @@
                         };
                         document.body.appendChild(script);
                     });
-
-            alert('Booking confirmed! A calendar invitation has been sent to your email.');
-                closeModal();
-                schedulingForm.reset();
+    
+                    alert('Booking confirmed! A calendar invitation has been sent to your email.');
+                    closeModal();
+                    schedulingForm.reset();
                     timeSlotGroup.style.display = 'none';
                 } catch (error) {
-            console.error('Error:', error);
-            alert('Error: Failed to book appointment. Please try again or contact us directly.');
+                    console.error('Error:', error);
+                    alert('Error: Failed to book appointment. Please try again or contact us directly.');
                 } finally {
                     submitButton.disabled = false;
                     submitButton.textContent = 'Book Now';
                 }
-        });
+            });
         }
     });
     </script>
