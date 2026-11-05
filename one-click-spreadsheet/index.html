@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="language" content="English">
+    <link rel="canonical" href="https://cjcody.github.io/codyjwebstudio/one-click-spreadsheet/">
+    <title>The One-Click Business Spreadsheet | Google Sheets Automation Kit | Cody J Web Studio</title>
+    <meta name="description" content="A ready-made Google Sheet that sends your invoices, receipts, quotes and reminders, tracks mileage and expenses, and catches website leads. Plus a short course on customizing it with AI. $9.99.">
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://cjcody.github.io/codyjwebstudio/one-click-spreadsheet/">
+    <meta property="og:title" content="The One-Click Business Spreadsheet">
+    <meta property="og:description" content="Type the job, click once, and the paperwork is done. Google Sheets automations for US small businesses, with a step-by-step guide.">
+    <meta property="og:image" content="https://cjcody.github.io/codyjwebstudio/one-click-spreadsheet/images/preview-1-cover-and-contents.png">
+    <meta property="product:price:amount" content="9.99">
+    <meta property="product:price:currency" content="USD">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The One-Click Business Spreadsheet">
+    <meta name="twitter:description" content="Type the job, click once, and the paperwork is done. Google Sheets automations for US small businesses, with a step-by-step guide.">
+    <meta name="twitter:image" content="https://cjcody.github.io/codyjwebstudio/one-click-spreadsheet/images/preview-1-cover-and-contents.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+    <link rel="apple-touch-icon" href="../favicon-32.png">
+    <link rel="stylesheet" href="../styles/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <style>
+        .course-hero {
+            position: relative;
+            min-height: 90vh;
+            padding: 8rem 2rem 4rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0f172a;
+            color: white;
+        }
+        .course-hero .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .course-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .course-hero .eyebrow {
+            font-size: 0.9rem;
+            color: #60a5fa;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        .course-hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            line-height: 1.15;
+        }
+        .course-hero .tagline {
+            font-size: 1.35rem;
+            color: #e2e8f0;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .course-hero .subtitle {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .price-highlight {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #60a5fa;
+            margin-bottom: 1.5rem;
+        }
+        .price-highlight span {
+            font-size: 1rem;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+        .buy-button {
+            display: inline-block;
+            padding: 1.25rem 2.5rem;
+            background: #2563eb;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        .buy-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+        .hero-meta {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        .hero-preview img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .course-section {
+            padding: 4rem 0;
+        }
+        .course-section:nth-child(even) {
+            background: var(--light-background);
+        }
+        .course-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+        .build-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .build-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .build-item i {
+            font-size: 1.5rem;
+            color: #10b981;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+        .build-item p {
+            margin: 0;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+        .who-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .who-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .who-item i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .included-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .included-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .included-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        .included-card p {
+            color: var(--light-text);
+            margin: 0;
+        }
+        .modules-intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .modules-intro p {
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .savings-banner {
+            background: #2563eb;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .savings-banner strong {
+            font-size: 1.25rem;
+        }
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .module-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+        }
+        .module-card.free {
+            border: 2px solid #10b981;
+        }
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+        .module-number {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .module-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+        .module-price.free-label {
+            color: #10b981;
+        }
+        .module-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+        .module-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+        .module-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+        }
+        .module-card li {
+            padding: 0.25rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        .module-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        .module-cta {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #2563eb;
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+        .module-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        .module-cta.free-cta {
+            background: #059669;
+        }
+        .module-cta.free-cta:hover {
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        .preview-gallery {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .preview-gallery img {
+            max-width: 350px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .preview-gallery img:hover {
+            transform: scale(1.02);
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+        .faq-item p {
+            margin: 0;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .policy-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        .policy-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .policy-card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+        .policy-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        .final-cta {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #0f172a;
+            color: white;
+        }
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .final-cta .price-highlight {
+            margin-bottom: 2rem;
+        }
+        .disclaimer {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            line-height: 1.6;
+        }
+        .cross-sell {
+            background: #eef2ff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .cross-sell h3 {
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+        .cross-sell p {
+            color: var(--light-text);
+            margin-bottom: 1rem;
+        }
+        .cross-sell a {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .cross-sell a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 1024px) {
+            .course-hero .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            .course-hero h1 {
+                font-size: 2.25rem;
+            }
+            .hero-preview {
+                order: -1;
+            }
+            .hero-preview img {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        @media (max-width: 768px) {
+            .course-hero h1 {
+                font-size: 1.85rem;
+            }
+            .course-hero .tagline {
+                font-size: 1.15rem;
+            }
+            .price-highlight {
+                font-size: 2rem;
+            }
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+        .course-hero .hero-content { max-width: 1200px; }
+        .course-hero h1 .accent { color: #8b5cf6; }
+        .buy-button:hover { background: #1d4ed8; }
+        .feature-table { width: 100%; max-width: 900px; margin: 0 auto; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .feature-table th { background: #0f172a; color: #fff; text-align: left; padding: 0.9rem 1rem; font-weight: 600; }
+        .feature-table td { padding: 0.85rem 1rem; border-bottom: 1px solid #e2e8f0; color: var(--light-text); vertical-align: top; }
+        .feature-table td:first-child { color: var(--text-color); font-weight: 600; white-space: nowrap; }
+        .steps { max-width: 820px; margin: 0 auto; counter-reset: s; list-style: none; padding: 0; }
+        .steps li { counter-increment: s; position: relative; padding: 0 0 1.25rem 3.25rem; color: var(--light-text); line-height: 1.6; text-align: left; }
+        .steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: #2563eb; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+        .steps li strong { color: var(--text-color); }
+        .note-box { max-width: 820px; margin: 1.5rem auto 0; background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 12px; padding: 1.25rem 1.5rem; color: var(--text-color); text-align: left; line-height: 1.6; }
+        .note-box strong { color: #6d28d9; }
+        .included-grid { grid-template-columns: repeat(4, 1fr); }
+        @media (max-width: 1024px) { .included-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .included-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .feature-table td:first-child { white-space: normal; } }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <img src="../images/logogeneric.png" alt="Cody J Web Studio Logo" width="50" height="50">
+                <div class="text-logo">
+                    <span class="text-logo-main">Cody J</span>
+                    <span class="text-logo-sub">Web Studio</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../capabilities.html">Capabilities</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../shop/" class="active">Shop</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-overlay">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../capabilities.html">Capabilities</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../shop/" class="active">Shop</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="course-hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="eyebrow">Google Sheets · Apps Script · Beginner-friendly</p>
+                    <h1>The One-Click <span class="accent">Business Spreadsheet</span></h1>
+                    <p class="tagline">Type the job. Click once. The paperwork is done.</p>
+                    <p class="subtitle">A ready-made Google Sheet that emails your invoices, receipts, quotes and reminders, tracks your mileage and expenses, and catches every website lead. Plus a short, plain-English course on making it your own with AI.</p>
+                    <div class="price-highlight">$9.99 <span>one-time, instant download</span></div>
+                    <a href="https://buy.stripe.com/14A14f9ez0SW0oldWm8bS0c" class="buy-button" data-product="One-Click Business Spreadsheet" data-value="9.99">Get the Spreadsheet for $9.99</a>
+                    <p class="hero-meta">Works with free Gmail or Google Workspace · No monthly fees from us · Made for US small businesses and solo service pros</p>
+                </div>
+                <div class="hero-preview">
+                    <img src="images/preview-1-cover-and-contents.png" alt="The One-Click Business Spreadsheet guide cover and contents" width="500" height="333" fetchpriority="high">
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>Sound Familiar?</h2>
+                <p style="max-width: 800px; margin: 0 auto 2rem; color: var(--light-text); line-height: 1.7;">The work is done, but the paperwork is not. You retype the same invoice every time, forget to follow up on the one that is three weeks late, guess at your mileage in April, and find website messages days after they came in. Invoicing apps help, but they add another monthly bill and another login.</p>
+                <p style="max-width: 800px; margin: 0 auto; color: var(--text-color); font-weight: 500; font-size: 1.1rem;"><strong>The One-Click Business Spreadsheet</strong> puts it all in one Google Sheet you already know how to use. Each job is a row. Click the row, pick an item from the Business Tools menu, and the sheet does the rest.</p>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>What It Does For You</h2>
+                <table class="feature-table">
+                    <thead><tr><th>Feature</th><th>What happens when you click</th></tr></thead>
+                    <tbody>
+                        <tr><td>Invoices</td><td>A clean PDF invoice from the selected row, emailed to your client, with the date it was sent written in the sheet.</td></tr>
+                        <tr><td>Receipts</td><td>Mark a job paid, then send a PDF receipt in one step.</td></tr>
+                        <tr><td>"Pay now" links</td><td>Optional Stripe Payment Link on every invoice, tagged with the invoice number.</td></tr>
+                        <tr><td>Monthly statements</td><td>Pick a client and a month in a side panel. Every job lands in one statement.</td></tr>
+                        <tr><td>Quotes</td><td>Send a numbered quote, then convert it to an invoice when the client says yes.</td></tr>
+                        <tr><td>Overdue reminders</td><td>Friendly reminder emails for late invoices, every morning, automatically.</td></tr>
+                        <tr><td>Appointment reminders</td><td>An email to your client before each visit.</td></tr>
+                        <tr><td>Mileage</td><td>Round-trip miles from your home base via Google Maps, plus a yearly summary at the IRS rate you set.</td></tr>
+                        <tr><td>Expenses and profit</td><td>An expense log, tax-time category totals and a monthly profit dashboard with a chart.</td></tr>
+                        <tr><td>Website contact form</td><td>Messages from your site go into the sheet and your inbox. Works on most website builders.</td></tr>
+                        <tr><td>Customer intake form</td><td>A ready-made Google Form that adds new customers to your Clients tab.</td></tr>
+                    </tbody>
+                </table>
+                <div class="note-box"><strong>Test mode is on from day one.</strong> Every email comes to you first, marked as a test, so you can try every button before a client ever sees anything.</div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>Who It's For</h2>
+                <div class="who-list">
+                    <div class="who-item">
+                        <i class="fas fa-truck"></i>
+                        <p><strong>Solo service pros</strong> like cleaners, inspectors, handymen, landscapers, mobile mechanics and pet groomers who invoice after every job.</p>
+                    </div>
+                    <div class="who-item">
+                        <i class="fas fa-store"></i>
+                        <p><strong>Small business owners</strong> who want invoices, reminders and records in one place without another monthly subscription.</p>
+                    </div>
+                    <div class="who-item">
+                        <i class="fas fa-seedling"></i>
+                        <p><strong>Beginners</strong> who have never written code. Everything is a menu click, and the guide explains each step in plain English.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>What's Included</h2>
+                <div class="included-grid">
+                    <div class="included-card">
+                        <i class="fas fa-table"></i>
+                        <h3>The Spreadsheet</h3>
+                        <p>A one-click copy link for the ready-made Google Sheet. Every automation is already built in, with sample data to practice on.</p>
+                    </div>
+                    <div class="included-card">
+                        <i class="fas fa-code"></i>
+                        <h3>The Code, Explained</h3>
+                        <p>Every script as an easy-to-read text file, one per feature, ready to hand to an AI assistant when you want to customize something.</p>
+                    </div>
+                    <div class="included-card">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <h3>Templates and Website Form</h3>
+                        <p>Invoice, receipt, statement and quote templates, plus a copy-paste contact form for your website.</p>
+                    </div>
+                    <div class="included-card">
+                        <i class="fas fa-book-open"></i>
+                        <h3>The Course Guide</h3>
+                        <p>A PDF guide with 9 short modules, copy-paste AI prompts and a full menu, button and tag reference.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>A Look Inside</h2>
+                <div class="preview-gallery">
+                    <a href="images/preview-1-cover-and-contents.png" class="lightbox-trigger" aria-label="View larger: Guide cover and contents"><img src="images/preview-1-cover-and-contents.png" alt="Guide cover, contents and Module 1 opener" width="350" height="233" loading="lazy" decoding="async"></a>
+                    <a href="images/preview-2-setup.png" class="lightbox-trigger" aria-label="View larger: Setup steps"><img src="images/preview-2-setup.png" alt="Setup steps with the Google permission screens explained" width="350" height="233" loading="lazy" decoding="async"></a>
+                    <a href="images/preview-3-customize-with-ai.png" class="lightbox-trigger" aria-label="View larger: Customize with AI"><img src="images/preview-3-customize-with-ai.png" alt="Copy-paste AI prompts for customizing and fixing the code" width="350" height="233" loading="lazy" decoding="async"></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>How It Works</h2>
+                <ol class="steps">
+                    <li><strong>Make your copy.</strong> Click the copy link in your download, then Make a copy. The spreadsheet, with all its automations, lands in your own Google Drive. Nothing to install or paste.</li>
+                    <li><strong>Run setup once.</strong> Click Business Tools, then Run first-time setup, and approve Google's permission screens. Module 1 shows every screen.</li>
+                    <li><strong>Add your details.</strong> Type your business name, email and address on the Settings tab. Your invoice templates are created for you.</li>
+                    <li><strong>Click and send.</strong> Add a job, click Send invoice, and let the morning timer handle reminders.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>The Course</h2>
+                <div class="modules-intro">
+                    <p>Nine short modules. Module 1 is free, so you can see exactly how setup works before you buy.</p>
+                </div>
+                <div class="modules-grid">
+                    <div class="module-card free">
+                        <div class="module-header">
+                            <span class="module-number">Module 1</span>
+                            <span class="module-price free-label">FREE</span>
+                        </div>
+                        <h3>Set up your spreadsheet in 15 minutes</h3>
+                        <p>Copy the sheet, approve Google's permission screens (including the "unverified app" warning), fill in Settings and send your first test invoice.</p>
+                        <a href="free/One-Click-Business-Spreadsheet-Module-1-Free.pdf" class="module-cta free-cta" download>Download Module 1 Free</a>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 2</span>
+                            <span class="module-price">Included</span>
+                        </div>
+                        <h3>Invoices, receipts and "Pay now" links</h3>
+                        <p>PDF invoices from any row, Mark as paid, receipts, optional Stripe payment links and your own branded templates.</p>
+                        
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 3</span>
+                            <span class="module-price">Included</span>
+                        </div>
+                        <h3>Monthly statements and quotes</h3>
+                        <p>One statement per client per month, and quotes that turn into invoices with one click.</p>
+                        
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 4</span>
+                            <span class="module-price">Included</span>
+                        </div>
+                        <h3>Reminders that run themselves</h3>
+                        <p>Daily overdue invoice reminders and appointment reminders, on autopilot.</p>
+                        
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 5</span>
+                            <span class="module-price">Included</span>
+                        </div>
+                        <h3>Mileage, expenses and your profit dashboard</h3>
+                        <p>Round-trip miles from Google Maps, a yearly summary at the IRS rate, expense categories and a monthly profit chart.</p>
+                        
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 6</span>
+                            <span class="module-price">Included</span>
+                        </div>
+                        <h3>Catch every lead</h3>
+                        <p>Connect your website's contact form to the sheet and your inbox, and create a customer intake Google Form.</p>
+                        
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 7</span>
+                            <span class="module-price">Included</span>
+                        </div>
+                        <h3>Customize anything with an AI assistant</h3>
+                        <p>A safe change routine and copy-paste prompts for ChatGPT, Claude or Gemini.</p>
+                        
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 8</span>
+                            <span class="module-price">Included</span>
+                        </div>
+                        <h3>Fix any error in five minutes</h3>
+                        <p>Where errors show up, the "fix the error" prompt, and fixes for the most common problems.</p>
+                        
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">Module 9</span>
+                            <span class="module-price">Included</span>
+                        </div>
+                        <h3>Google's limits, privacy and going live</h3>
+                        <p>Gmail and Maps daily limits explained, keeping client data private, and the go-live checklist.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>Do I need to know how to code?</h3>
+                        <p>No. You copy the sheet with one click, run setup once, click Allow on Google's permission screens, and use the Business Tools menu. When you want to change something, the guide gives you copy-paste prompts so an AI assistant writes the code change for you.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What do I need?</h3>
+                        <p>A Google account (free Gmail works) and a computer for the first setup. After that you can add jobs from the Google Sheets app on your phone. A Stripe account is optional, for "Pay now" links.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Why does Google say the app is not verified?</h3>
+                        <p>Google shows that warning for any script a person runs in their own account that has not gone through Google's formal review. Module 1 walks you through the screen step by step and explains every permission. The code runs only inside your own copy of the sheet.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How many emails can it send?</h3>
+                        <p>Google sets the limits, not the kit. Free Gmail accounts can email about 100 recipients a day and Google Workspace accounts about 1,500. Google Maps lookups for mileage have their own daily limit. Google can change these, and the guide shows you how to check what you have left.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does it work with my website?</h3>
+                        <p>The contact form snippet works on any site where you can add HTML: GitHub Pages, WordPress (Custom HTML block), Squarespace (Code block) and others. Wix shows it in an embed frame.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I change the invoice design?</h3>
+                        <p>Yes. Setup creates your invoice, receipt, statement and quote templates as Google Docs. Add your logo, colors and wording. The guide lists every tag you can use.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is this tax advice?</h3>
+                        <p>No. The mileage summary and tax-time expense summary help you organize your records. Check the current IRS mileage rate and the rules for your situation with a tax professional.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do I get it?</h3>
+                        <p>Right after checkout you get the download: the one-click copy link for the ready-made Google Sheet (all the automations are already inside, so there is no code to paste), the templates, the website form and the PDF guide. You also get a Stripe receipt by email.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Questions before buying?</h3>
+                        <p>Email Cody J Web Studio at <a href="mailto:codyjwebstudio@gmail.com" style="color: var(--primary-color);">codyjwebstudio@gmail.com</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <h2>Policies</h2>
+                <div class="policy-grid">
+                    <div class="policy-card">
+                        <i class="fas fa-undo"></i>
+                        <h3>Refund Policy</h3>
+                        <p>Because this is an instantly downloadable digital product, all sales are final. If your files won't open, are damaged, or aren't what was described, email us at codyjwebstudio@gmail.com within 14 days of purchase and we'll fix it or refund you.</p>
+                    </div>
+                    <div class="policy-card">
+                        <i class="fas fa-file-contract"></i>
+                        <h3>License</h3>
+                        <p>Use it in your own business and set it up for your clients' businesses. No reselling, sharing or redistributing the spreadsheet, code or guide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container">
+                <h2>Ready to Stop Doing Paperwork by Hand?</h2>
+                <div class="price-highlight">$9.99 <span>spreadsheet + code + templates + guide</span></div>
+                <a href="https://buy.stripe.com/14A14f9ez0SW0oldWm8bS0c" class="buy-button" data-product="One-Click Business Spreadsheet" data-value="9.99">Get the One-Click Business Spreadsheet for $9.99</a>
+                <p class="disclaimer">Business guidance only; not tax, legal, or accounting advice. Email, Google Maps and other daily limits are set by Google and can change. Payment links depend on your payment provider and its fees. Google, Gmail, Stripe and other product names are trademarks of their respective owners; Cody J Web Studio is not affiliated with or endorsed by them. © 2026 Cody J Web Studio</p>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <div class="cross-sell">
+                    <h3>Also Available</h3>
+                    <p>Want to go further with AI? <strong>The AI Agent Bootcamp for Small Business</strong> shows you how to use AI agents to build a website, sell a digital product and automate your busywork, step by step.</p>
+                    <a href="../ai-agent-bootcamp/">Get the AI Agent Bootcamp for $19 →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Cody J Web Studio</h3>
+                <p>Creating digital experiences that matter</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: codyjwebstudio@gmail.com</p>
+                <p><a href="https://wa.me/447378776848" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;"><i class="fab fa-whatsapp"></i> Message on WhatsApp</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1DYnkF3u1u/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/cody-jennings-99103636a" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/codyjwebstudio?igsh=cDIzdTAwajFpcmE5&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Cody J Web Studio. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="../legal/privacy-policy.html">Privacy Policy</a> |
+                <a href="../legal/terms-of-service.html">Terms of Service</a> |
+                <a href="../legal/cookie-policy.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/lightbox.js"></script>
+    <script src="../scripts/analytics.js"></script>
+
+        <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "The One-Click Business Spreadsheet",
+    "description": "A ready-made Google Sheet with Apps Script automations for invoices, receipts, statements, quotes, overdue and appointment reminders, mileage, expenses and website leads, plus a 9-module course guide on setup and customizing with AI.",
+    "image": "https://cjcody.github.io/codyjwebstudio/one-click-spreadsheet/images/preview-1-cover-and-contents.png",
+    "brand": {
+        "@type": "Brand",
+        "name": "Cody J Web Studio"
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://cjcody.github.io/codyjwebstudio/one-click-spreadsheet/"
+    }
+}
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Do I need to know how to code?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. You copy the sheet with one click, run setup once, click Allow on Google's permission screens, and use the Business Tools menu. When you want to change something, the guide gives you copy-paste prompts so an AI assistant writes the code change for you."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What do I need?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A Google account (free Gmail works) and a computer for the first setup. After that you can add jobs from the Google Sheets app on your phone. A Stripe account is optional, for \"Pay now\" links."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why does Google say the app is not verified?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Google shows that warning for any script a person runs in their own account that has not gone through Google's formal review. Module 1 walks you through the screen step by step and explains every permission. The code runs only inside your own copy of the sheet."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How many emails can it send?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Google sets the limits, not the kit. Free Gmail accounts can email about 100 recipients a day and Google Workspace accounts about 1,500. Google Maps lookups for mileage have their own daily limit. Google can change these, and the guide shows you how to check what you have left."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does it work with my website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The contact form snippet works on any site where you can add HTML: GitHub Pages, WordPress (Custom HTML block), Squarespace (Code block) and others. Wix shows it in an embed frame."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I change the invoice design?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Setup creates your invoice, receipt, statement and quote templates as Google Docs. Add your logo, colors and wording. The guide lists every tag you can use."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is this tax advice?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The mileage summary and tax-time expense summary help you organize your records. Check the current IRS mileage rate and the rules for your situation with a tax professional."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I get it?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Right after checkout you get the download: the one-click copy link for the ready-made Google Sheet (all the automations are already inside, so there is no code to paste), the templates, the website form and the PDF guide. You also get a Stripe receipt by email."
+            }
+        }
+    ]
+}
+    </script>
+</body>
+</html>
