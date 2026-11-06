@@ -124,6 +124,7 @@
         .hero-preview img {
             width: 100%;
             max-width: 500px;
+            height: auto;
             border-radius: 12px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
@@ -444,11 +445,18 @@
             }
         }
         @media (max-width: 768px) {
+            .course-hero {
+                min-height: auto;
+                padding-top: 6rem;
+            }
             .course-hero h1 {
                 font-size: 1.85rem;
             }
             .course-hero .tagline {
                 font-size: 1.15rem;
+            }
+            .hero-preview img {
+                max-width: 100%;
             }
             .price-highlight {
                 font-size: 2rem;
